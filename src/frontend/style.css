@@ -1,369 +1,390 @@
 /* RESET BÁSICO */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Montserrat', sans-serif; 
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
-    line-height: 1.6;
-    color: #333; 
-    background-color: #f4f4f4;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
 }
 
 #marca {
-    font-size: 4.5em;
-    font-weight: 700; 
-    color: #FF9800;
-    margin-bottom: 10px; 
-    letter-spacing: 5px;
-    text-shadow: 4px 4px 0px rgba(76, 175, 80, 0.4); 
-    display: inline-block;
-    padding-bottom: 5px;
+  font-size: 4.5em;
+  font-weight: 700;
+  color: #ff9800;
+  margin-bottom: 10px;
+  letter-spacing: 5px;
+  text-shadow: 4px 4px 0px rgba(76, 175, 80, 0.4);
+  display: inline-block;
+  padding-bottom: 5px;
 }
 
 /* CONTAINER  */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 /* STRONG */
 strong {
-    font-weight: 700;
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-weight: 700;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
 }
 
 #strong-cores {
-    text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-    font-style: italic;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-style: italic;
 }
 
 /* TÍTULOS GERAIS */
 h2 {
-    font-size: 2em;
-    color: #2e7d32;
-    margin-bottom: 30px;
-    position: relative;
-    padding-bottom: 10px;
+  font-size: 2em;
+  color: #2e7d32;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 10px;
 }
 
 h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background-color: #FF9800;
-    margin: 0 auto;
-    margin-top: 10px;
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background-color: #ff9800;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 
 /* BOTÕES (CTAs)  */
 .botao {
-    display: inline-block;
-    padding: 18px 35px; 
-    margin-top: 25px;
-    text-decoration: none;
-    border-radius: 50px;
-    font-weight: 700; 
-    text-transform: uppercase;
-    transition: all 0.3s ease;
-    cursor: pointer;
-    text-align: center;
-    letter-spacing: 0.5px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-    border: none;
+  display: inline-block;
+  padding: 18px 35px;
+  margin-top: 25px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  letter-spacing: 0.5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  border: none;
 }
 
 .botao:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 0 5px #333, 0 6px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px #333, 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .cta-principal {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
 
 .cta-principal:hover {
-    background-color: #45a049;
-    transform: translateY(-3px);
-    box-shadow: 0 0 5px #4CAF50, 0 6px 20px rgba(0, 0, 0, 0.25); 
+  background-color: #45a049;
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px #4caf50, 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 .cta-secundaria {
-    background-color: #FF9800;
-    color: white;
-    margin-bottom: 25px;
+  background-color: #ff9800;
+  color: white;
+  margin-bottom: 25px;
 }
 
 .cta-secundaria:hover {
-    background-color: #fb8c00;
-    transform: translateY(-3px);
-    box-shadow: 0 0 5px #FF9800, 0 6px 20px rgba(0, 0, 0, 0.25);
+  background-color: #fb8c00;
+  transform: translateY(-3px);
+  box-shadow: 0 0 5px #ff9800, 0 6px 20px rgba(0, 0, 0, 0.25);
 }
 
 /* SEÇÃO HERO  */
 .secao-hero {
-    background-image: linear-gradient(180deg, #E8F5E9 0%, #DCECDD 100%);
-    padding: 100px 0;
-    text-align: center;
+  background-image: linear-gradient(180deg, #e8f5e9 0%, #dcecdd 100%);
+  padding: 100px 0;
+  text-align: center;
 }
 
 #headline {
-    font-size: 3em;
-    font-weight: bold;
-    color: #2e7d32;
-    line-height: 1.2;
+  font-size: 3em;
+  font-weight: bold;
+  color: #2e7d32;
+  line-height: 1.2;
 }
 
 .secao-hero h1 {
-    font-size: 2em;
-    margin-bottom: 25px;
-    color: #2e7d32;
-    line-height: 1.2;
+  font-size: 2em;
+  margin-bottom: 25px;
+  color: #2e7d32;
+  line-height: 1.2;
 }
 
 .secao-hero .subtitulo {
-    font-size: 1.4em;
-    font-weight: 300;
-    color: #555;
-    margin-bottom: 40px;
+  font-size: 1.4em;
+  font-weight: 300;
+  color: #555;
+  margin-bottom: 40px;
 }
 
 .lista-beneficios {
-    margin: 40px auto;
-    max-width: 650px;
-    text-align: left;
-    padding: 30px;
-    border-radius: 12px;
-    background-color: #fff; 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  margin: 40px auto;
+  max-width: 650px;
+  text-align: left;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
 .lista-beneficios h2 {
-    color: #388e3c;
-    margin-top: 0;
-    font-size: 1.5em;
-    margin-bottom: 20px;
+  color: #388e3c;
+  margin-top: 0;
+  font-size: 1.5em;
+  margin-bottom: 20px;
 }
 .lista-beneficios h2::after {
-    background-color: #388e3c;
+  background-color: #388e3c;
 }
 
 .lista-beneficios ul {
-    list-style: none;
-    padding-left: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .lista-beneficios li {
-    padding: 10px 0;
-    border-bottom: 1px solid #eee;
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
 }
 .lista-beneficios li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .lista-beneficios li:before {
-    content: '✅'; 
-    margin-right: 15px;
-    font-size: 1.1em;
+  content: "✅";
+  margin-right: 15px;
+  font-size: 1.1em;
 }
 
 /* SEÇÕES GENÉRICAS */
 .secao {
-    padding: 80px 0;
-    text-align: center;
+  padding: 80px 0;
+  text-align: center;
 }
 
 /* SEÇÃO RAZÕES */
 .secao-razoes {
-    background-color: #fff;
+  background-color: #fff;
 }
 .secao-razoes .destaque {
-    font-size: 1.2em;
-    font-weight: bold;
-    color: #FF9800;
-    padding: 10px;
-    border: 2px solid #FF9800;
-    display: inline-block;
-    border-radius: 5px;
-    margin-top: 20px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #ff9800;
+  padding: 10px;
+  border: 2px solid #ff9800;
+  display: inline-block;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 /* FORMATO RECEITA */
 .placeholder-video {
-    background-color: #ddd;
-    color: #666;
-    height: 300px;
-    max-width: 600px;
-    margin: 30px auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    font-weight: bold;
-    border: 3px dashed #ccc;
+  background-color: #ddd;
+  color: #666;
+  height: 300px;
+  max-width: 600px;
+  margin: 30px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  font-weight: bold;
+  border: 3px dashed #ccc;
 }
 
-.detalhes-receita ul, 
+.detalhes-receita ul,
 .detalhes-receita ol {
-    list-style-type: none;
-    padding-left: 0;
+  list-style-type: none;
+  padding-left: 0;
 }
 
 /* DEPOIMENTOS  */
 .secao-depoimentos {
-    background-color: #e3f2fd;
+  background-color: #e3f2fd;
 }
 
 .cartao-depoimento {
-    background-color: #fff;
-    padding: 25px;
-    margin: 25px auto;
-    border-left: 5px solid #FF9800; 
-    max-width: 800px;
-    text-align: left;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
-    transition: transform 0.2s;
+  background-color: #fff;
+  padding: 25px;
+  margin: 25px auto;
+  border-left: 5px solid #ff9800;
+  max-width: 800px;
+  text-align: left;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
 .cartao-depoimento:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
 }
 
 .cartao-depoimento .autor {
-    font-weight: bold;
-    text-align: right;
-    color: #4CAF50;
+  font-weight: bold;
+  text-align: right;
+  color: #4caf50;
 }
 
 /* TABELAS */
-.tabela-comparacao, .tabela-macros {
-    width: 100%;
-    max-width: 800px;
-    margin: 30px auto;
-    border-collapse: collapse;
-    border-radius: 8px;
-    overflow: hidden; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+.tabela-comparacao,
+.tabela-macros {
+  width: 100%;
+  max-width: 800px;
+  margin: 30px auto;
+  border-collapse: collapse;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.tabela-comparacao th, .tabela-comparacao td, .tabela-macros th, .tabela-macros td {
-    border: 1px solid #eee; 
-    padding: 15px;
+.tabela-comparacao th,
+.tabela-comparacao td,
+.tabela-macros th,
+.tabela-macros td {
+  border: 1px solid #eee;
+  padding: 15px;
 }
 
-.tabela-comparacao th, .tabela-macros th {
-    background-color: #4CAF50;
-    color: white;
-    font-weight: 700;
+.tabela-comparacao th,
+.tabela-macros th {
+  background-color: #4caf50;
+  color: white;
+  font-weight: 700;
 }
 .tabela-comparacao tbody tr:nth-child(even) {
-    background-color: #f7fff7;
+  background-color: #f7fff7;
 }
 
 /* SEÇÃO BÔNUS */
 .secao-bonus {
-    background-color: #4CAF50;
-    color: white;
+  background-color: #4caf50;
+  color: white;
 }
 .secao-bonus h2 {
-    color: white;
+  color: white;
 }
 .secao-bonus h2::after {
-    background-color: #FF9800;
+  background-color: #ff9800;
 }
 .lista-bonus {
-    list-style: none;
-    padding-left: 0;
-    max-width: 700px;
-    margin: 0 auto;
+  list-style: none;
+  padding-left: 0;
+  max-width: 700px;
+  margin: 0 auto;
 }
 .lista-bonus li {
-    background-color: rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    margin-bottom: 15px;
-    border-radius: 8px;
-    font-size: 1.1em;
-    text-align: left;
-    border-left: 5px solid #FF9800;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  text-align: left;
+  border-left: 5px solid #ff9800;
 }
 
 /* FAQ */
 .item-faq {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    text-align: left;
-    transition: box-shadow 0.3s;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: left;
+  transition: box-shadow 0.3s;
 }
 .item-faq:hover {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 .item-faq h3 {
-    color: #FF9800;
-    margin-bottom: 10px;
+  color: #ff9800;
+  margin-bottom: 10px;
 }
 
 /* FOOTER */
 .rodape-site {
-    background-color: #222;
-    color: #eee;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 0.9em;
-    border-top: 5px solid #4CAF50; 
+  background-color: #222;
+  color: #eee;
+  padding: 30px 0;
+  text-align: center;
+  font-size: 0.9em;
+  border-top: 5px solid #4caf50;
 }
 
 .links-sociais {
-    margin: 20px 0;
+  margin: 20px 0;
 }
 
 .links-sociais i {
-    font-size: 2.5em; 
-    color: #90ee90;
-    margin: 0 15px; 
-    cursor: pointer; 
-    display: inline-block;
-    transition: color 0.3s;
+  font-size: 2.5em;
+  color: #90ee90;
+  margin: 0 15px;
+  cursor: pointer;
+  display: inline-block;
+  transition: color 0.3s;
 }
 
 .links-sociais i:hover {
-    color: #fff;
+  color: #fff;
 }
 
 .rodape-site p a {
-    color: #90ee90;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s;
+  color: #90ee90;
+  text-decoration: none;
+  margin: 0 10px;
+  transition: color 0.3s;
 }
 .rodape-site p a:hover {
-    color: #fff;
+  color: #fff;
 }
 
 /* cabeçalho */
-.cabecalho-navegacao{
-    background-color: #4CAF50;
-    /* formato como exibe o conteúdo */
-    display: flex; /*ativa align e justify*/
-    align-items: center; /*alinhamento vertical*/
-    justify-content: space-between; /*alinhamento horizontal dos itens(space-between = espaçar entre*/
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+.cabecalho-navegacao {
+  background-color: #4caf50;
+  /* formato como exibe o conteúdo */
+  display: flex; /*ativa align e justify*/
+  align-items: center; /*alinhamento vertical*/
+  justify-content: space-between; /*alinhamento horizontal dos itens(space-between = espaçar entre*/
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 .cabecalho-navegacao nav a {
-    color: white;
-    font-weight: 600; /*negrito*/
-    padding: 15px;
-    text-decoration: none; /*decoração do texto: linhas e tal*/
+  color: white;
+  font-weight: 600; /*negrito*/
+  padding: 15px;
+  text-decoration: none; /*decoração do texto: linhas e tal*/
+}
+
+/* Estilização para a mensagem de contato */
+.contato-suporte {
+  font-size: 1.1em; /* Torna o texto um pouco maior e mais fácil de ler */
+  color: #333; /* Cor do texto padrão */
+  margin-top: 40px; /* Adiciona um bom espaçamento acima para separar do último FAQ */
+  padding: 15px;
+  border-top: 1px solid #ddd; /* Linha sutil para separar do conteúdo acima */
+  text-align: center;
+}
+
+/* Garante que o número ou link do WhatsApp se destaque */
+.contato-suporte strong {
+  color: #4caf50; /* A cor verde do seu tema */
+  font-weight: 700;
 }
