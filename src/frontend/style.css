@@ -347,3 +347,23 @@ h2::after {
 .rodape-site p a:hover {
     color: #fff;
 }
+
+/* cabeçalho */
+.cabecalho-navegacao{
+    background-color: #4CAF50;
+    /* formato como exibe o conteúdo */
+    display: flex; /*ativa align e justify*/
+    align-items: center; /*alinhamento vertical*/
+    justify-content: space-between; /*alinhamento horizontal dos itens(space-between = espaçar entre*/
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.cabecalho-navegacao nav a {
+    color: white;
+    font-weight: 600; /*negrito*/
+    padding: 15px;
+    text-decoration: none; /*decoração do texto: linhas e tal*/
+}
