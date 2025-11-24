@@ -82,3 +82,29 @@ button[type="submit"]:hover {
     text-decoration: underline;
 }
 
+
+
+/* cabeçalho */
+.cabecalho-navegacao{
+    background-color: #4CAF50;
+    /* formato como exibe o conteúdo */
+    display: flex; /*ativa align e justify*/
+    align-items: center; /*alinhamento vertical*/
+    justify-content: space-between; /*alinhamento horizontal dos itens(space-between = espaçar entre*/
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: fixed; /* Fixa o elemento em relação à viewport */
+    top: 0;          /* Alinha ao topo da viewport */
+    left: 0;         /* Alinha à esquerda da viewport */
+    width: 100%;     /* Garante que ele ocupe toda a largura */
+    z-index: 1000;
+}
+
+.cabecalho-navegacao nav a {
+    color: white;
+    font-weight: 600; /*negrito*/
+    padding: 15px;
+    text-decoration: none; /*decoração do texto: linhas e tal*/
+}
