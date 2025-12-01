@@ -1,5 +1,3 @@
-// fazer a conexão com o banco de dados
-
 <?php 
 
 
@@ -9,7 +7,7 @@ $user = 'root';  // usuário do banco de dados
 $pass = '';   // senha do banco de dados
 $charset = 'utf8mb4'; // conjunto de caracteres
 
-
+// Configurações do PDO
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$db;charset=$charset", $user, $pass); // cria uma nova conexão PDO
 
