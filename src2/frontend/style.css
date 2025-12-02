@@ -25,7 +25,7 @@ h1, h2, h3, .font-serif {
   object-fit: cover;
 }
 
-/* card de vategoria da receita */
+/* card de categoria da receita */
 .category-card {
   height: 280px;
   border-radius: 20px;
@@ -74,4 +74,9 @@ h1, h2, h3, .font-serif {
   background-size: cover;
   background-position: center;
   border-radius: 15px;
+}
+
+.texto_botao {
+  background-color: #4a572c;
+    color: #ffffff !important;
 }

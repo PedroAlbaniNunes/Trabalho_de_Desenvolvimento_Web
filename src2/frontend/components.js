@@ -7,12 +7,12 @@ function carregarHeader(titulo = "Brio") { //já coloquei bootstrap no header e 
         </div>
   
         <div class="d-flex align-items-center gap-4">
-          <div class="d-none d-md-flex align-items-center gap-2 cursor-pointer btn btn-link text-white text-decoration-none">
-             <i class="fas fa-plus-circle"></i> <span>Adicionar</span>
-          </div>
-          <div class="d-none d-md-flex align-items-center gap-2 cursor-pointer btn btn-link text-white text-decoration-none">
+          <a href="adicionar_receita.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+            <i class="fas fa-plus-circle"></i> <span>Adicionar</span>
+          </a>
+          <a href="salvas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-heart"></i> <span>Salvas</span>
-          </div>
+          </a>
           <div class="rounded-circle bg-white" style="width: 40px; height: 40px;"></div>
         </div>
       </div>
