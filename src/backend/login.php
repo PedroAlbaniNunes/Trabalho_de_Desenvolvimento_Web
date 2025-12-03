@@ -30,10 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
 
         } else {
-            echo "<script>
-                alert('Usuário ou senha incorretos!');
-                window.location.href = '../frontend/login.html';
-            </script>";
+            header("Location: ../frontend/login.html?login_erro=true");
         }
 
     } catch (PDOException $e) {

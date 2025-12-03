@@ -60,5 +60,98 @@
             </p>
         </div>
 
+        <div id="modal-erro" class="modal-overlay">
+            <div class="modal-box erro">
+                <h2>Atenção!</h2>
+                <p id="mensagem-erro">Ocorreu um erro.</p>
+                <button onclick="fecharModal('modal-erro')">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div id="modal-sucesso" class="modal-overlay">
+            <div class="modal-box sucesso">
+                <h2>Sucesso!</h2>
+                <p>Seu cadastro foi realizado.</p>
+                <button onclick="irParaLogin()">Fazer Login</button>
+            </div>
+        </div>
+
+    <style>
+        /* --- CSS DOS MODAIS --- */
+        .modal-overlay {
+            display: none; 
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        
+        .modal-box {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            font-family: sans-serif;
+        }
+
+        /* Estilo para Erro (Vermelho) */
+        .erro h2 { color: #d9534f; margin-top: 0; }
+        .erro button {
+            background-color: #d9534f;
+            color: white; border: none; padding: 10px 20px; 
+            border-radius: 5px; cursor: pointer; margin-top: 15px;
+        }
+        .erro button:hover { background-color: #c9302c; }
+
+        /* Estilo para Sucesso (Verde) */
+        .sucesso h2 { color: #28a745; margin-top: 0; }
+        .sucesso button {
+            background-color: #28a745;
+            color: white; border: none; padding: 10px 20px; 
+            border-radius: 5px; cursor: pointer; margin-top: 15px;
+        }
+        .sucesso button:hover { background-color: #218838; }
+    </style>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // --- Verifica SUCESSO ---
+            if (urlParams.has('sucesso')) {
+                document.getElementById('modal-sucesso').style.display = 'flex';
+            }
+
+            // --- Verifica ERRO ---
+            if (urlParams.has('erro')) {
+                const tipoErro = urlParams.get('erro');
+                const msg = document.getElementById('mensagem-erro');
+
+                if (tipoErro === 'email_existe') {
+                    msg.innerText = "Este e-mail já está cadastrado.";
+                } else {
+                    msg.innerText = "Erro no sistema. Tente novamente.";
+                }
+                document.getElementById('modal-erro').style.display = 'flex';
+            }
+        }
+
+        // Fecha apenas o modal passado por parâmetro
+        function fecharModal(idModal) {
+            document.getElementById(idModal).style.display = 'none';
+            // Limpa a URL
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
+
+        // Função específica para o botão de sucesso
+        function irParaLogin() {
+            window.location.href = 'login.html';
+        }
+    </script>
 </body>
 </html>
