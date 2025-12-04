@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_nome'] = $user['nome'];
 
-            header("Location: ../../src2/fronted/index.html");
+            header("Location: ../../src2/frontend/index.html");
             exit;
 
         } else {
