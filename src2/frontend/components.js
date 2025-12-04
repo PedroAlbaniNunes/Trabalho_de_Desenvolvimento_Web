@@ -6,7 +6,21 @@ function carregarHeader(titulo = "Brio") { //já coloquei bootstrap no header e 
           ${titulo}
         </div>
   
-        <div class="d-flex align-items-center gap-4">
+        <div class="d-flex align-items-center gap-1">
+
+          <a href="ultimas_receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class=" "></i> <span>Últimas Receitas</span>
+          </a>
+          <a href="airfryer.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class=" "></i> <span>Air Fryer</span>
+          </a>          
+          <a href="pasta.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class=" "></i> <span>Pasta</span>
+          </a>
+          <a href="snacks.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class=" "></i> <span>Snacks</span>
+          </a>
+          
           <a href="adicionar_receita.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
             <i class="fas fa-plus-circle"></i> <span>Adicionar</span>
           </a>
