@@ -40,6 +40,40 @@ function carregarHeader(titulo = "Brio") {
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 }
 
+function carregarHeaderTelaInicial(titulo = "Brio") {
+  const headerHTML = `
+    <header class="navbar navbar-expand bg-brio-green text-white py-3 shadow-sm">
+      <div class="container">
+        <div class="navbar-brand text-white font-serif fs-3 me-auto">
+          ${titulo}
+        </div>
+  
+        <div class="d-flex align-items-center gap-1">
+
+          <a href="receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-utensils"></i> <span>Todas as Receitas</span>
+          </a>
+          <a href="receitas.html?categoria=Air Fryer" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-wind"></i> <span>Air Fryer</span>
+          </a>          
+          <a href="receitas.html?categoria=Massa" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-pizza-slice"></i> <span>Pasta</span>
+          </a>
+          <a href="receitas.html?categoria=Lanche" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
+          </a>
+          
+          <a href="/src/frontend/login.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+              <i class="fas fa-sign-out-alt"></i> <span>Entrar</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    `;
+
+  document.body.insertAdjacentHTML("afterbegin", headerHTML);
+}
+
 function carregarFooter() {
   const footerHTML = `
     <footer class="bg-brio-green text-white text-center py-4 mt-auto">
