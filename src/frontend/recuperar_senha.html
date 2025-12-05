@@ -4,118 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página de Login</title>
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="cabecalho-navegacao">
-      <!-- tag ancora  - link que redireciona para a pagina inicial quando se clica numa logo-->
-      <a href="index.html">
-        <!-- src = é o nome da imagem, alt é o nome alternativo para caso a imagem nao carregue-->
-        <img
-          src="../imagens/logo_sem_fundo.png"
-          alt="icone do Brio"
-          width="150px"
-          height="50px"
-        />
-      </a>
-      <!-- se quiser navegar para outros sites tem que colocar o endereço completo "https://...." -->
-      <a href="https://www.google.com"> </a>
-      <!-- navegação dentro da pagina -->
-      <nav>
-        <!-- # é para navegar para seções dentro da mesma página  -->
-        <a href="">Marmitas</a>
-        <a href="">Objetivos</a>
-        <a href="">Dúvidas</a>
-        <a href="">Contato</a>
-        <a href="login.html">Login</a>
-        <a href=" ">
-          <img
-            src="../imagens/carrinho.png"
-            alt="Seu Carrinho"
-            width="25px"
-            height="25px"
-          />
-        </a>
-      </nav>
-    </header>
-
     <div class="login-container">
-      <h1>Recuperar a Senha</h1>
-      <form action="../backend/login.php" method="post">
+      <h1>Recuperar Senha</h1>
+
+      <form action="../backend/solicitar_reset.php" method="post">
         <div class="input-group">
           <label for="email">Digite o seu e-mail</label>
-          <input type="email" id="email" name="email" required />
+          <input
+            type="email"
+            id="email"
+            placeholder="Digite o seu e-mail"
+            name="email"
+            required
+          />
         </div>
-        <button type="submit">Entrar</button>
+        <button type="submit">Enviar e-mail</button>
       </form>
     </div>
-
-    <div id="modal-erro" class="modal-overlay">
-      <div class="modal-box">
-        <h2>Ops!</h2>
-        <p>Usuário ou senha incorretos.</p>
-        <button onclick="fecharModal()">Tentar Novamente</button>
-      </div>
-    </div>
-
-    <style>
-      .modal-overlay {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.6);
-        justify-content: center;
-        align-items: center;
-        z-index: 1000;
-      }
-
-      .modal-box {
-        background: white;
-        padding: 30px;
-        border-radius: 10px;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-        width: 300px;
-      }
-
-      .modal-box h2 {
-        color: #ff4444;
-        margin-top: 0;
-      }
-      .modal-box button {
-        background-color: #ff4444;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 5px;
-        cursor: pointer;
-        margin-top: 15px;
-      }
-      .modal-box button:hover {
-        background-color: #cc0000;
-      }
-    </style>
-
-    <script>
-      window.onload = function () {
-        const urlParams = new URLSearchParams(window.location.search);
-
-        if (urlParams.has("login_erro")) {
-          document.getElementById("modal-erro").style.display = "flex";
-        }
-      };
-
-      function fecharModal() {
-        document.getElementById("modal-erro").style.display = "none";
-        window.history.replaceState(
-          {},
-          document.title,
-          window.location.pathname
-        );
-      }
-    </script>
+    <script src="recuperar_senha.js"></script>
   </body>
 </html>
