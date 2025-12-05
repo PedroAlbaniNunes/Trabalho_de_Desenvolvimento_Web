@@ -39,6 +39,7 @@ label {
 }
 
 input[type="text"],
+input[type="email"],
 input[type="password"] {
     /* Estilo para os campos de texto e senha */
     width: 100%;
@@ -46,6 +47,18 @@ input[type="password"] {
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box; /* Garante que o padding não aumente a largura total */
+    font-size: 14px;
+    font-family: inherit;
+    background-color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #5cb85c;
+    box-shadow: 0 0 5px rgba(92, 184, 92, 0.3);
 }
 
 button[type="submit"] {

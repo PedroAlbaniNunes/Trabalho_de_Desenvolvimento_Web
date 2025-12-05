@@ -6,17 +6,17 @@ require 'conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
-    // 1. Recebemos os dados. No HTML o campo se chama 'username'
-    $username = $_POST['username']; 
+    // 1. Recebemos os dados. No HTML o campo se chama 'username' mas é o email
+    $email = $_POST['username']; 
     $password = $_POST['password'];
 
     try {
-        // Estamos buscando onde a coluna 'nome' é igual ao que o usuário digitou.
-        $sql = "SELECT * FROM usuarios WHERE nome = :username";
+        // Buscamos pelo email (campo único) como era originalmente
+        $sql = "SELECT * FROM usuarios WHERE email = :email";
         
         $stmt = $pdo->prepare($sql);
 
-        $stmt->execute([':username' => $username]);
+        $stmt->execute([':email' => $email]);
         
         $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
             $_SESSION['user_id'] = $user['id'];
             $_SESSION['user_nome'] = $user['nome'];
+            $_SESSION['user_email'] = $user['email'];
 
             header("Location: ../../src2/frontend/index.html");
             exit;
