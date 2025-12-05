@@ -34,7 +34,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
 
     } catch (PDOException $e) {
-        echo "Erro no sistema: " . $e->getMessage();
+        // Log error securely
+        error_log('Login error: ' . $e->getMessage());
+        header("Location: ../frontend/login.html?login_erro=true");
+        exit;
     }
 } else {
     header("Location: ../frontend/login.html");

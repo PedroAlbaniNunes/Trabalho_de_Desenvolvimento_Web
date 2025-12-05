@@ -14,7 +14,9 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); // define o modo de erro para exceções
 
 } catch (PDOException $e) {
-    echo 'Conexão falhou: ' . $e->getMessage(); // mensagem de erro 
+    // Log error securely and show user-friendly message
+    error_log('Database connection failed: ' . $e->getMessage());
+    die('Erro de conexão com o banco de dados. Verifique se o XAMPP está rodando.');
 }
 
 ?>

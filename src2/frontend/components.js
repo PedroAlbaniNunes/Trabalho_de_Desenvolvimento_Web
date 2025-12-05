@@ -8,24 +8,27 @@ function carregarHeader(titulo = "Brio") { //já coloquei bootstrap no header e 
   
         <div class="d-flex align-items-center gap-1">
 
-          <a href="ultimas_receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class=" "></i> <span>Últimas Receitas</span>
+          <a href="receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-utensils"></i> <span>Todas as Receitas</span>
           </a>
-          <a href="airfryer.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class=" "></i> <span>Air Fryer</span>
+          <a href="receitas.html?categoria=Air Fryer" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-wind"></i> <span>Air Fryer</span>
           </a>          
-          <a href="pasta.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class=" "></i> <span>Pasta</span>
+          <a href="receitas.html?categoria=Massa" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-pizza-slice"></i> <span>Pasta</span>
           </a>
-          <a href="snacks.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class=" "></i> <span>Snacks</span>
+          <a href="receitas.html?categoria=Lanche" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
           </a>
           
           <a href="adicionar_receita.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
             <i class="fas fa-plus-circle"></i> <span>Adicionar</span>
           </a>
-          <a href="salvas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class="fas fa-heart"></i> <span>Salvas</span>
+          <a href="favoritas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-heart"></i> <span>Favoritas</span>
+          </a>
+          <a href="../../src/backend/logout.php" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-sign-out-alt"></i> <span>Sair</span>
           </a>
           <div class="rounded-circle bg-white" style="width: 40px; height: 40px;"></div>
         </div>

@@ -11,14 +11,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     $usuario_id = $_SESSION['user_id'];
     
-    // Dados do formulário
-    $titulo = $_POST['nome'];
-    $descricao = $_POST['descricao'];
-    $tempo_preparo = $_POST['tempo'];
-    $categoria = $_POST['categoria'];
-    $dificuldade = $_POST['dificuldade'];
-    $ingredientes = $_POST['ingredientes'];
-    $preparo = $_POST['preparo']; 
+    // Dados do formulário com validação básica
+    $titulo = trim($_POST['nome'] ?? '');
+    $descricao = trim($_POST['descricao'] ?? '');
+    $tempo_preparo = intval($_POST['tempo'] ?? 0);
+    $categoria = trim($_POST['categoria'] ?? '');
+    $dificuldade_raw = trim($_POST['dificuldade'] ?? '');
+    $ingredientes = trim($_POST['ingredientes'] ?? '');
+    $preparo = trim($_POST['preparo'] ?? '');
+    
+    // Fix difficulty mapping from numeric to text
+    $difficulty_map = [
+        '1' => 'Fácil',
+        '2' => 'Médio', 
+        '3' => 'Difícil',
+        '4' => 'Chef',
+        '5' => 'Chef'
+    ];
+    
+    // Convert numeric difficulty to text if needed
+    if (isset($difficulty_map[$dificuldade_raw])) {
+        $dificuldade = $difficulty_map[$dificuldade_raw];
+    } else {
+        $dificuldade = $dificuldade_raw; // Already text format
+    }
+    
+    // Validação básica
+    if (empty($titulo) || empty($descricao) || empty($categoria) || empty($dificuldade) || empty($ingredientes) || empty($preparo)) {
+        header("Location: ../../src2/frontend/adicionar_receita.html?erro=campos_obrigatorios");
+        exit;
+    }
+    
+    if ($tempo_preparo <= 0) {
+        header("Location: ../../src2/frontend/adicionar_receita.html?erro=tempo_invalido");
+        exit;
+    } 
 
     try {
         $sql = "INSERT INTO receitas (
@@ -46,6 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
         exit;
 
     } catch (PDOException $e) {
+        // Log error for debugging
+        error_log('Recipe creation error: ' . $e->getMessage());
         header("Location: ../../src2/frontend/adicionar_receita.html?erro=sistema");
         exit;
     }
