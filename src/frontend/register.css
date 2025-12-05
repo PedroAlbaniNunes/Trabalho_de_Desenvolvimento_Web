@@ -1,139 +1,56 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    display: flex;
-    flex-direction: column; 
-    justify-content: flex-start; /* Alinha no topo */
-    align-items: center;
-    min-height: 100vh;
-    padding: 20px;
-    margin: 0;
-    box-sizing: border-box;
-}
+@import url("style.css");
 
 .main-content {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 30px;
-    width: 90%;
-    max-width: 1200px;
-    margin-top: 10%;
-    flex-wrap: wrap; /* Garante responsividade em telas menores */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 10%;
+  flex-wrap: wrap;
 }
 
-.login-container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: 380px;
-    text-align: center;
-    margin-bottom: 20px;
+/* Estilo para o Modal de Erro (diferente cor do modal de login) */
+.erro h2 {
+  color: var(--cor-alerta-erro-registro); /* #d9534f */
+  margin-top: 0;
+}
+.erro button {
+  background-color: var(--cor-alerta-erro-registro); /* #d9534f */
+  color: var(--cor-texto-cabecalho);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.erro button:hover {
+  background-color: var(--cor-alerta-registro-hover); /* #c9302c */
 }
 
-h1 {
-    color: #333;
-    margin-bottom: 20px;
+/* Estilo para Sucesso (Verde) */
+.sucesso h2 {
+  color: var(--cor-alerta-sucesso); /* #28a745 */
+  margin-top: 0;
 }
-
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
+.sucesso button {
+  background-color: var(--cor-alerta-sucesso); /* #28a745 */
+  color: var(--cor-texto-cabecalho);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
 }
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #555;
-}
-
-input[type="text"],
-input[type="password"],
-input[type="email"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    transition: border-color 0.3s;
-}
-
-input:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-/* Estilo para o botão de REGISTRO (Cor Azul) */
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    background-color: #5cb85c; /* Azul para registro */
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover:not(:disabled) {
-    background-color: #4cae4c;
-}
-
-button[type="submit"]:disabled {
-    background-color: #99cfff;
-    cursor: not-allowed;
-}
-
-.login-options{
-    margin-top: 15px;
-    font-size: 14px;
-    display: flex;
-    justify-content: center;
-}
-
-.login-options a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.login-options a:hover {
-    text-decoration: underline;
+.sucesso button:hover {
+  background-color: var(--cor-alerta-sucesso-hover); /* #218838 */
 }
 
 .message-box {
-    margin-top: 15px;
-    padding: 10px;
-    border-radius: 4px;
-    font-weight: bold;
-}
-
-/* cabeçalho */
-.cabecalho-navegacao{
-    background-color: #4CAF50;
-    /* formato como exibe o conteúdo */
-    display: flex; /*ativa align e justify*/
-    align-items: center; /*alinhamento vertical*/
-    justify-content: space-between; /*alinhamento horizontal dos itens(space-between = espaçar entre*/
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    position: fixed; /* Fixa o elemento em relação à viewport */
-    top: 0;          /* Alinha ao topo da viewport */
-    left: 0;         /* Alinha à esquerda da viewport */
-    width: 100%;     /* Garante que ele ocupe toda a largura */
-    z-index: 1000;
-}
-
-.cabecalho-navegacao nav a {
-    color: white;
-    font-weight: 600; /*negrito*/
-    padding: 15px;
-    text-decoration: none; /*decoração do texto: linhas e tal*/
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
 }

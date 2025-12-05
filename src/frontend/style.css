@@ -1,390 +1,174 @@
-/* RESET BÁSICO */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Montserrat", sans-serif;
+:root {
+  /* Cores de Fundo e Texto */
+  --cor-fundo-pagina: #f4f4f9;
+  --cor-fundo-container: #fff;
+  --cor-texto-principal: #333;
+  --cor-texto-secundario: #555;
+  --cor-borda-input: #ccc;
+  --cor-link: #007bff;
+  --cor-texto-cabecalho: white;
+
+  /* Cores de Sucesso/Primário */
+  --cor-cabecalho: #4caf50;
+  --cor-btn-sucesso: #5cb85c;
+  --cor-btn-sucesso-hover: #4cae4c;
+  --cor-alerta-sucesso: #28a745;
+  --cor-alerta-sucesso-hover: #218838;
+
+  /* Cores de Erro/Alerta */
+  --cor-alerta-erro-login: #ff4444;
+  --cor-alerta-erro-login-hover: #cc0000;
+  --cor-alerta-erro-registro: #d9534f;
+  --cor-alerta-registro-hover: #c9302c;
+
+  /* Sombras */
+  --sombra-container: 0 4px 12px rgba(0, 0, 0, 0.15); /* Padrão do register.css */
+  --sombra-modal: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
+
+/* Estilos Básicos (Body e Títulos) */
 
 body {
-  line-height: 1.6;
-  color: #333;
-  background-color: #f4f4f4;
-}
-
-#marca {
-  font-size: 4.5em;
-  font-weight: 700;
-  color: #ff9800;
-  margin-bottom: 10px;
-  letter-spacing: 5px;
-  text-shadow: 4px 4px 0px rgba(76, 175, 80, 0.4);
-  display: inline-block;
-  padding-bottom: 5px;
-}
-
-/* CONTAINER  */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* STRONG */
-strong {
-  font-weight: 700;
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-}
-
-#strong-cores {
-  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-  font-style: italic;
-}
-
-/* TÍTULOS GERAIS */
-h2 {
-  font-size: 2em;
-  color: #2e7d32;
-  margin-bottom: 30px;
-  position: relative;
-  padding-bottom: 10px;
-}
-
-h2::after {
-  content: "";
-  display: block;
-  width: 50px;
-  height: 3px;
-  background-color: #ff9800;
-  margin: 0 auto;
-  margin-top: 10px;
-}
-
-/* BOTÕES (CTAs)  */
-.botao {
-  display: inline-block;
-  padding: 18px 35px;
-  margin-top: 25px;
-  text-decoration: none;
-  border-radius: 50px;
-  font-weight: 700;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-  cursor: pointer;
-  text-align: center;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  border: none;
-}
-
-.botao:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 0 5px #333, 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.cta-principal {
-  background-color: #4caf50;
-  color: white;
-}
-
-.cta-principal:hover {
-  background-color: #45a049;
-  transform: translateY(-3px);
-  box-shadow: 0 0 5px #4caf50, 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-.cta-secundaria {
-  background-color: #ff9800;
-  color: white;
-  margin-bottom: 25px;
-}
-
-.cta-secundaria:hover {
-  background-color: #fb8c00;
-  transform: translateY(-3px);
-  box-shadow: 0 0 5px #ff9800, 0 6px 20px rgba(0, 0, 0, 0.25);
-}
-
-/* SEÇÃO HERO  */
-.secao-hero {
-  background-image: linear-gradient(180deg, #e8f5e9 0%, #dcecdd 100%);
-  padding: 100px 0;
-  text-align: center;
-}
-
-#headline {
-  font-size: 3em;
-  font-weight: bold;
-  color: #2e7d32;
-  line-height: 1.2;
-}
-
-.secao-hero h1 {
-  font-size: 2em;
-  margin-bottom: 25px;
-  color: #2e7d32;
-  line-height: 1.2;
-}
-
-.secao-hero .subtitulo {
-  font-size: 1.4em;
-  font-weight: 300;
-  color: #555;
-  margin-bottom: 40px;
-}
-
-.lista-beneficios {
-  margin: 40px auto;
-  max-width: 650px;
-  text-align: left;
-  padding: 30px;
-  border-radius: 12px;
-  background-color: #fff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
-
-.lista-beneficios h2 {
-  color: #388e3c;
-  margin-top: 0;
-  font-size: 1.5em;
-  margin-bottom: 20px;
-}
-.lista-beneficios h2::after {
-  background-color: #388e3c;
-}
-
-.lista-beneficios ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.lista-beneficios li {
-  padding: 10px 0;
-  border-bottom: 1px solid #eee;
-}
-.lista-beneficios li:last-child {
-  border-bottom: none;
-}
-
-.lista-beneficios li:before {
-  content: "✅";
-  margin-right: 15px;
-  font-size: 1.1em;
-}
-
-/* SEÇÕES GENÉRICAS */
-.secao {
-  padding: 80px 0;
-  text-align: center;
-}
-
-/* SEÇÃO RAZÕES */
-.secao-razoes {
-  background-color: #fff;
-}
-.secao-razoes .destaque {
-  font-size: 1.2em;
-  font-weight: bold;
-  color: #ff9800;
-  padding: 10px;
-  border: 2px solid #ff9800;
-  display: inline-block;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-/* FORMATO RECEITA */
-.placeholder-video {
-  background-color: #ddd;
-  color: #666;
-  height: 300px;
-  max-width: 600px;
-  margin: 30px auto;
+  font-family: Arial, sans-serif;
+  background-color: var(--cor-fundo-pagina);
+  min-height: 100vh;
+  margin: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
-  font-weight: bold;
-  border: 3px dashed #ccc;
 }
 
-.detalhes-receita ul,
-.detalhes-receita ol {
-  list-style-type: none;
-  padding-left: 0;
+h1 {
+  color: var(--cor-texto-principal);
+  margin-bottom: 20px;
 }
 
-/* DEPOIMENTOS  */
-.secao-depoimentos {
-  background-color: #e3f2fd;
-}
+/* Container de Formulário */
 
-.cartao-depoimento {
-  background-color: #fff;
-  padding: 25px;
-  margin: 25px auto;
-  border-left: 5px solid #ff9800;
-  max-width: 800px;
-  text-align: left;
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s;
-}
-.cartao-depoimento:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
-}
-
-.cartao-depoimento .autor {
-  font-weight: bold;
-  text-align: right;
-  color: #4caf50;
-}
-
-/* TABELAS */
-.tabela-comparacao,
-.tabela-macros {
+.login-container {
+  background-color: var(--cor-fundo-container);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: var(--sombra-container);
   width: 100%;
-  max-width: 800px;
-  margin: 30px auto;
-  border-collapse: collapse;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.tabela-comparacao th,
-.tabela-comparacao td,
-.tabela-macros th,
-.tabela-macros td {
-  border: 1px solid #eee;
-  padding: 15px;
-}
-
-.tabela-comparacao th,
-.tabela-macros th {
-  background-color: #4caf50;
-  color: white;
-  font-weight: 700;
-}
-.tabela-comparacao tbody tr:nth-child(even) {
-  background-color: #f7fff7;
-}
-
-/* SEÇÃO BÔNUS */
-.secao-bonus {
-  background-color: #4caf50;
-  color: white;
-}
-.secao-bonus h2 {
-  color: white;
-}
-.secao-bonus h2::after {
-  background-color: #ff9800;
-}
-.lista-bonus {
-  list-style: none;
-  padding-left: 0;
-  max-width: 700px;
-  margin: 0 auto;
-}
-.lista-bonus li {
-  background-color: rgba(255, 255, 255, 0.1);
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  font-size: 1.1em;
-  text-align: left;
-  border-left: 5px solid #ff9800;
-}
-
-/* FAQ */
-.item-faq {
-  max-width: 800px;
-  margin: 20px auto;
-  padding: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  text-align: left;
-  transition: box-shadow 0.3s;
-}
-.item-faq:hover {
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-.item-faq h3 {
-  color: #ff9800;
-  margin-bottom: 10px;
-}
-
-/* FOOTER */
-.rodape-site {
-  background-color: #222;
-  color: #eee;
-  padding: 30px 0;
+  max-width: 380px;
   text-align: center;
-  font-size: 0.9em;
-  border-top: 5px solid #4caf50;
 }
 
-.links-sociais {
-  margin: 20px 0;
+/* Inputs e Labels */
+
+.input-group {
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-.links-sociais i {
-  font-size: 2.5em;
-  color: #90ee90;
-  margin: 0 15px;
+label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--cor-texto-secundario);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--cor-borda-input);
+  border-radius: 4px;
+  box-sizing: border-box;
+  transition: border-color 0.3s;
+}
+
+input:focus {
+  border-color: var(--cor-link);
+  outline: none;
+}
+
+/* Botão de Envio (Submit) */
+
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--cor-btn-sucesso);
+  color: var(--cor-texto-cabecalho);
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  display: inline-block;
-  transition: color 0.3s;
+  font-size: 16px;
+  margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
-.links-sociais i:hover {
-  color: #fff;
+button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--cor-btn-sucesso-hover);
 }
 
-.rodape-site p a {
-  color: #90ee90;
+button[type="submit"]:disabled {
+  background-color: #99cfff;
+  cursor: not-allowed;
+}
+
+/* Links e Opções */
+
+.login-options {
+  margin-top: 15px;
+  font-size: 14px; /* Tamanho unificado */
+}
+
+.login-options a {
+  color: var(--cor-link);
   text-decoration: none;
-  margin: 0 10px;
-  transition: color 0.3s;
-}
-.rodape-site p a:hover {
-  color: #fff;
 }
 
-/* cabeçalho */
+.login-options a:hover {
+  text-decoration: underline;
+}
+
 .cabecalho-navegacao {
-  background-color: #4caf50;
-  /* formato como exibe o conteúdo */
-  display: flex; /*ativa align e justify*/
-  align-items: center; /*alinhamento vertical*/
-  justify-content: space-between; /*alinhamento horizontal dos itens(space-between = espaçar entre*/
+  background-color: var(--cor-cabecalho);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding-left: 50px;
   padding-right: 50px;
   padding-top: 15px;
   padding-bottom: 15px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .cabecalho-navegacao nav a {
-  color: white;
-  font-weight: 600; /*negrito*/
+  color: var(--cor-texto-cabecalho);
+  font-weight: 600;
   padding: 15px;
-  text-decoration: none; /*decoração do texto: linhas e tal*/
+  text-decoration: none;
 }
 
-/* Estilização para a mensagem de contato */
-.contato-suporte {
-  font-size: 1.1em; /* Torna o texto um pouco maior e mais fácil de ler */
-  color: #333; /* Cor do texto padrão */
-  margin-top: 40px; /* Adiciona um bom espaçamento acima para separar do último FAQ */
-  padding: 15px;
-  border-top: 1px solid #ddd; /* Linha sutil para separar do conteúdo acima */
+/* Modal (Overlay e Box) */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-box {
+  background: var(--cor-fundo-container);
+  padding: 30px;
+  border-radius: 10px;
   text-align: center;
-}
-
-/* Garante que o número ou link do WhatsApp se destaque */
-.contato-suporte strong {
-  color: #4caf50; /* A cor verde do seu tema */
-  font-weight: 700;
+  width: 300px;
+  box-shadow: var(--sombra-modal);
+  font-family: sans-serif;
 }
