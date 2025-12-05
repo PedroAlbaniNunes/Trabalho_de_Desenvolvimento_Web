@@ -7,30 +7,7 @@
     <title>CRUD de Usuários - Registro e Lista</title>
 </head>
 <body>
-    <header class="cabecalho-navegacao">
-        <!-- tag ancora  - link que redireciona para a pagina inicial quando se clica numa logo-->
-        <a href="index.html">
-             <!-- src = é o nome da imagem, alt é o nome alternativo para caso a imagem nao carregue-->
-             <img src="../imagens/logo_sem_fundo.png" alt="icone do Brio" width="150px" height="50px">
-        </a>
-        <!-- se quiser navegar para outros sites tem que colocar o endereço completo "https://...." -->
-        <a href="https://www.google.com"> </a>
-        <!-- navegação dentro da pagina -->
-         <nav>
-            <!-- # é para navegar para seções dentro da mesma página  -->
-            <a href="">Marmitas</a>
-            <a href="">Objetivos</a>
-            <a href="">Dúvidas</a>
-            <a href="">Contato</a>
-            <a href="login.html">Login</a>
-            <a href=" ">
-                    <img src="../imagens/carrinho.png" alt="Seu Carrinho" width="25px" height="25px">
-            </a>
-
-         </nav>
-    </header>
     <div class="main-content">
-        <!-- SEÇÃO 1: FORMULÁRIO DE REGISTRO (C - CREATE) -->
         <div class="login-container">
             <h1>Criar Conta</h1>
             <form id="register-form" action="../backend/cadastrar.php" method="post">
@@ -76,82 +53,6 @@
             </div>
         </div>
 
-    <style>
-        /* --- CSS DOS MODAIS --- */
-        .modal-overlay {
-            display: none; 
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0, 0, 0, 0.6);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-        
-        .modal-box {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            text-align: center;
-            width: 300px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-            font-family: sans-serif;
-        }
-
-        /* Estilo para Erro (Vermelho) */
-        .erro h2 { color: #d9534f; margin-top: 0; }
-        .erro button {
-            background-color: #d9534f;
-            color: white; border: none; padding: 10px 20px; 
-            border-radius: 5px; cursor: pointer; margin-top: 15px;
-        }
-        .erro button:hover { background-color: #c9302c; }
-
-        /* Estilo para Sucesso (Verde) */
-        .sucesso h2 { color: #28a745; margin-top: 0; }
-        .sucesso button {
-            background-color: #28a745;
-            color: white; border: none; padding: 10px 20px; 
-            border-radius: 5px; cursor: pointer; margin-top: 15px;
-        }
-        .sucesso button:hover { background-color: #218838; }
-    </style>
-
-    <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            
-            // --- Verifica SUCESSO ---
-            if (urlParams.has('sucesso')) {
-                document.getElementById('modal-sucesso').style.display = 'flex';
-            }
-
-            // --- Verifica ERRO ---
-            if (urlParams.has('erro')) {
-                const tipoErro = urlParams.get('erro');
-                const msg = document.getElementById('mensagem-erro');
-
-                if (tipoErro === 'email_existe') {
-                    msg.innerText = "Este e-mail já está cadastrado.";
-                } else {
-                    msg.innerText = "Erro no sistema. Tente novamente.";
-                }
-                document.getElementById('modal-erro').style.display = 'flex';
-            }
-        }
-
-        // Fecha apenas o modal passado por parâmetro
-        function fecharModal(idModal) {
-            document.getElementById(idModal).style.display = 'none';
-            // Limpa a URL
-            window.history.replaceState({}, document.title, window.location.pathname);
-        }
-
-        // Função específica para o botão de sucesso
-        function irParaLogin() {
-            window.location.href = 'login.html';
-        }
-    </script>
+    <script src="register.js"></script>
 </body>
 </html>
