@@ -9,10 +9,10 @@ function carregarHeader(titulo = "Brio") {
   
         <div class="d-flex align-items-center gap-1">
 
-          <a href="receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="pages/receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-utensils"></i> <span>Todas as Receitas</span>
           </a>
-          <a href="receitas.html?categoria=Air Fryer" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="pages/airfryer.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-wind"></i> <span>Air Fryer</span>
           </a>          
           <a href="receitas.html?categoria=Massa" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
@@ -51,16 +51,16 @@ function carregarHeaderTelaInicial(titulo = "Brio") {
   
         <div class="d-flex align-items-center gap-1">
 
-          <a href="receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="pages/receitas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-utensils"></i> <span>Todas as Receitas</span>
           </a>
-          <a href="receitas.html?categoria=Air Fryer" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="pages/airfryer.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-wind"></i> <span>Air Fryer</span>
           </a>          
-          <a href="receitas.html?categoria=Massa" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="pages/pasta.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-pizza-slice"></i> <span>Pasta</span>
           </a>
-          <a href="receitas.html?categoria=Lanche" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="pages/snacks.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
           </a>
           
