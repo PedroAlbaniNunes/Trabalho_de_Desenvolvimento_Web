@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Redefinir Senha</title>
-    <link rel="stylesheet" href="register.css" />
+    <link
+      rel="stylesheet"
+      href="..\..\css\crud_usuario_css\crud_usuario_style.css"
+    />
   </head>
   <body>
     <div class="login-container">
       <h1>Nova Senha</h1>
       <form
         id="reset-form"
-        action="../backend/redefinir_senha_final.php"
+        action="../../php/redefinir_senha_final.php"
         method="post"
       >
         <input type="hidden" id="token" name="token" value="" />
@@ -38,8 +41,8 @@
         <button type="submit">Redefinir Senha</button>
       </form>
 
-      <div id="modal-erro" class="modal-overlay">...</div>
-      <div id="modal-sucesso" class="modal-overlay">...</div>
+      <!-- <div id="modal-erro" class="modal-overlay"></div>
+      <div id="modal-sucesso" class="modal-overlay"></div> -->
     </div>
 
     <script>

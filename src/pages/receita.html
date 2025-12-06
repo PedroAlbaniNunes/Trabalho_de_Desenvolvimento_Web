@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brio - Receita</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body class="d-flex flex-column min-vh-100 bg-light">
+    <!-- Loading -->
+    <div id="loading" class="container py-5 text-center">
+      <div class="spinner-border text-primary" role="status">
+        <span class="visually-hidden">Carregando receita...</span>
+      </div>
+    </div>
+
+    <!-- Conteúdo da Receita -->
+    <div id="receita-content" class="container py-4" style="display: none">
+      <!-- Cabeçalho da Receita -->
+      <div class="row mb-4">
+        <div class="col-12">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item">
+                <a href="..\index.html">Início</a>
+              </li>
+              <li class="breadcrumb-item">
+                <a href="receitas.html">Receitas</a>
+              </li>
+              <li
+                class="breadcrumb-item active"
+                aria-current="page"
+                id="breadcrumb-title"
+              >
+                Receita
+              </li>
+            </ol>
+          </nav>
+
+          <div class="d-flex justify-content-between align-items-start">
+            <div>
+              <h1 id="receita-titulo" class="text-brio-green mb-2"></h1>
+              <p class="text-muted mb-0">
+                Por: <span id="receita-autor"></span>
+              </p>
+              <small class="text-muted" id="receita-data"></small>
+            </div>
+            <div class="d-flex gap-2">
+              <button
+                id="btn-favorito"
+                class="btn btn-outline-danger"
+                onclick="toggleFavorito()"
+              >
+                <i class="far fa-heart"></i> Favoritar
+              </button>
+              <div id="owner-actions" style="display: none">
+                <button
+                  class="btn btn-outline-primary me-2"
+                  onclick="editarReceita()"
+                >
+                  <i class="fas fa-edit"></i> Editar
+                </button>
+                <button
+                  class="btn btn-outline-danger"
+                  onclick="excluirReceita()"
+                >
+                  <i class="fas fa-trash"></i> Excluir
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Informações da Receita -->
+      <div class="row mb-4">
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Descrição</h5>
+              <p id="receita-descricao" class="card-text"></p>
+
+              <div class="row text-center mt-4">
+                <div class="col-4">
+                  <div class="border-end">
+                    <h6 class="text-muted mb-1">Tempo</h6>
+                    <span id="receita-tempo" class="fw-bold"></span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="border-end">
+                    <h6 class="text-muted mb-1">Dificuldade</h6>
+                    <span id="receita-dificuldade" class="fw-bold"></span>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <h6 class="text-muted mb-1">Categoria</h6>
+                  <span id="receita-categoria" class="fw-bold"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Ações Rápidas</h5>
+              <div class="d-grid gap-2">
+                <button
+                  class="btn btn-outline-primary"
+                  onclick="imprimirReceita()"
+                >
+                  <i class="fas fa-print"></i> Imprimir
+                </button>
+                <button
+                  class="btn btn-outline-success"
+                  onclick="compartilharReceita()"
+                >
+                  <i class="fas fa-share"></i> Compartilhar
+                </button>
+                <a href="receitas.html" class="btn btn-secondary">
+                  <i class="fas fa-arrow-left"></i> Voltar às Receitas
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ingredientes e Modo de Preparo -->
+      <div class="row mb-5">
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header bg-brio-green text-white">
+              <h5 class="mb-0"><i class="fas fa-list"></i> Ingredientes</h5>
+            </div>
+            <div class="card-body">
+              <div id="receita-ingredientes"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="card h-100">
+            <div class="card-header bg-brio-green text-white">
+              <h5 class="mb-0">
+                <i class="fas fa-utensils"></i> Modo de Preparo
+              </h5>
+            </div>
+            <div class="card-body">
+              <div id="receita-preparo"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Receitas Relacionadas -->
+      <div class="row">
+        <div class="col-12">
+          <h3 class="text-brio-green mb-4">Receitas Relacionadas</h3>
+          <div id="receitas-relacionadas" class="row g-3">
+            <!-- Receitas relacionadas serão carregadas aqui -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Erro -->
+    <div
+      id="error-content"
+      class="container py-5 text-center"
+      style="display: none"
+    >
+      <div class="alert alert-danger">
+        <h4>Receita não encontrada</h4>
+        <p>A receita que você está procurando não existe ou foi removida.</p>
+        <a href="receitas.html" class="btn btn-primary"
+          >Ver Todas as Receitas</a
+        >
+      </div>
+    </div>
+
+    <script src="../js/components.js"></script>
+    <script>
+      carregarHeader("Brio");
+      carregarFooter();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      let receitaAtual = null;
+      let isFavorito = false;
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const urlParams = new URLSearchParams(window.location.search);
+        const receitaId = urlParams.get("id");
+
+        if (!receitaId) {
+          mostrarErro();
+          return;
+        }
+
+        carregarReceita(receitaId);
+      });
+
+      function carregarReceita(id) {
+        fetch(`../../src/backend/verReceita.php?id=${id}&ajax=1`)
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.error) {
+              throw new Error(data.error);
+            }
+
+            receitaAtual = data.receita;
+            isFavorito = data.is_favorito;
+
+            renderReceita(data.receita);
+            renderReceitasRelacionadas(data.receitas_relacionadas);
+
+            if (data.is_owner) {
+              document.getElementById("owner-actions").style.display = "block";
+            }
+
+            // Esconder loading e mostrar conteúdo
+            document.getElementById("loading").style.display = "none";
+            document.getElementById("receita-content").style.display = "block";
+          })
+          .catch((error) => {
+            console.error("Erro ao carregar receita:", error);
+            mostrarErro();
+          });
+      }
+
+      function renderReceita(receita) {
+        document.getElementById("receita-titulo").textContent = receita.nome;
+        document.getElementById("breadcrumb-title").textContent = receita.nome;
+        document.getElementById("receita-autor").textContent =
+          receita.autor_nome;
+        document.getElementById("receita-descricao").textContent =
+          receita.descricao;
+        document.getElementById("receita-tempo").textContent =
+          receita.tempo_preparo_minutos + " min";
+        document.getElementById(
+          "receita-dificuldade"
+        ).textContent = `Nível ${receita.dificuldade}`;
+        document.getElementById("receita-categoria").textContent =
+          receita.categoria;
+
+        // Formatar data
+        const data = new Date(receita.data_postagem);
+        document.getElementById("receita-data").textContent =
+          "Publicado em " + data.toLocaleDateString("pt-BR");
+
+        // Renderizar ingredientes
+        const ingredientes = receita.ingredientes
+          .split("\n")
+          .filter((i) => i.trim());
+        document.getElementById("receita-ingredientes").innerHTML =
+          '<ul class="list-unstyled">' +
+          ingredientes
+            .map(
+              (ing) =>
+                `<li><i class="fas fa-check text-success me-2"></i>${ing.trim()}</li>`
+            )
+            .join("") +
+          "</ul>";
+
+        // Renderizar modo de preparo
+        const preparo = receita.modo_preparo
+          .split("\n")
+          .filter((p) => p.trim());
+        document.getElementById("receita-preparo").innerHTML =
+          "<ol>" +
+          preparo
+            .map((passo) => `<li class="mb-2">${passo.trim()}</li>`)
+            .join("") +
+          "</ol>";
+
+        // Atualizar botão de favorito
+        atualizarBotaoFavorito();
+
+        // Atualizar título da página
+        document.title = `Brio - ${receita.nome}`;
+      }
+
+      function renderReceitasRelacionadas(receitas) {
+        const container = document.getElementById("receitas-relacionadas");
+
+        if (receitas.length === 0) {
+          container.innerHTML =
+            '<div class="col-12"><p class="text-muted">Nenhuma receita relacionada encontrada.</p></div>';
+          return;
+        }
+
+        container.innerHTML = receitas
+          .map(
+            (receita) => `
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100">
+            <div class="card-body">
+              <h6 class="card-title">${receita.nome}</h6>
+              <p class="card-text small text-muted">${receita.descricao.substring(
+                0,
+                80
+              )}...</p>
+              <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">${
+                  receita.tempo_preparo_minutos
+                } min</small>
+                <a href="receita.html?id=${
+                  receita.id
+                }" class="btn btn-sm texto_botao">Ver</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      `
+          )
+          .join("");
+      }
+
+      function toggleFavorito() {
+        if (!receitaAtual) return;
+
+        fetch("../../php/favoritos.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: `receita_id=${receitaAtual.id}&action=toggle`,
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.success) {
+              isFavorito = data.is_favorito;
+              atualizarBotaoFavorito();
+            } else {
+              alert(data.error || "Erro ao atualizar favoritos");
+            }
+          })
+          .catch((error) => {
+            console.error("Erro:", error);
+            alert("Erro ao atualizar favoritos");
+          });
+      }
+
+      function atualizarBotaoFavorito() {
+        const btn = document.getElementById("btn-favorito");
+        const icon = btn.querySelector("i");
+
+        if (isFavorito) {
+          btn.classList.remove("btn-outline-danger");
+          btn.classList.add("btn-danger");
+          icon.classList.remove("far");
+          icon.classList.add("fas");
+          btn.innerHTML = '<i class="fas fa-heart"></i> Favoritado';
+        } else {
+          btn.classList.remove("btn-danger");
+          btn.classList.add("btn-outline-danger");
+          icon.classList.remove("fas");
+          icon.classList.add("far");
+          btn.innerHTML = '<i class="far fa-heart"></i> Favoritar';
+        }
+      }
+
+      function imprimirReceita() {
+        window.print();
+      }
+
+      function compartilharReceita() {
+        if (navigator.share) {
+          navigator.share({
+            title: receitaAtual.nome,
+            text: receitaAtual.descricao,
+            url: window.location.href,
+          });
+        } else {
+          // Fallback: copiar URL
+          navigator.clipboard.writeText(window.location.href).then(() => {
+            alert("Link copiado para a área de transferência!");
+          });
+        }
+      }
+
+      function editarReceita() {
+        // Implementar edição (futuro)
+        alert("Funcionalidade de edição será implementada em breve!");
+      }
+
+      function excluirReceita() {
+        if (
+          confirm(
+            "Tem certeza que deseja excluir esta receita? Esta ação não pode ser desfeita."
+          )
+        ) {
+          // Implementar exclusão (futuro)
+          alert("Funcionalidade de exclusão será implementada em breve!");
+        }
+      }
+
+      function mostrarErro() {
+        document.getElementById("loading").style.display = "none";
+        document.getElementById("error-content").style.display = "block";
+      }
+    </script>
+  </body>
+</html>

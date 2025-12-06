@@ -4,13 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Página de Login</title>
-    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="../../css/crud_usuario_css/crud_usuario_style.css"
+    />
   </head>
   <body>
     <div class="login-container">
       <h1>Recuperar Senha</h1>
 
-      <form action="../backend/solicitar_reset.php" method="post">
+      <form action="../../php/solicitar_reset.php" method="post">
         <div class="input-group">
           <label for="email">Digite o seu e-mail</label>
           <input
@@ -24,6 +27,6 @@
         <button type="submit">Enviar e-mail</button>
       </form>
     </div>
-    <script src="recuperar_senha.js"></script>
+    <script src="../../js/crud_usuario_js/recuperar_senha.js"></script>
   </body>
 </html>

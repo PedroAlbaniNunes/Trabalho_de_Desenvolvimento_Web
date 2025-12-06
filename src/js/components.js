@@ -28,7 +28,7 @@ function carregarHeader(titulo = "Brio") {
           <a href="favoritas.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-heart"></i> <span>Favoritas</span>
           </a>
-          <a href="src/backend/logout.php" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="../php/logout.php" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
               <i class="fas fa-sign-out-alt"></i> <span>Sair</span>
           </a>
           <div class="rounded-circle bg-white" style="width: 40px; height: 40px;"></div>
@@ -37,10 +37,11 @@ function carregarHeader(titulo = "Brio") {
     </header>
     `;
 
-  document.body.insertAdjacentHTML("afterbegin", headerHTML);
+  document.body.insertAdjacentHTML("afterbegin", headerHTML); //
 }
 
 function carregarHeaderTelaInicial(titulo = "Brio") {
+  //
   const headerHTML = `
     <header class="navbar navbar-expand bg-brio-green text-white py-3 shadow-sm">
       <div class="container">
@@ -63,7 +64,7 @@ function carregarHeaderTelaInicial(titulo = "Brio") {
              <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
           </a>
           
-          <a href="/src/frontend/login.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="./pages/crud_usuario/login.html" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
               <i class="fas fa-sign-out-alt"></i> <span>Entrar</span>
           </a>
         </div>
@@ -71,10 +72,11 @@ function carregarHeaderTelaInicial(titulo = "Brio") {
     </header>
     `;
 
-  document.body.insertAdjacentHTML("afterbegin", headerHTML);
+  document.body.insertAdjacentHTML("afterbegin", headerHTML); //
 }
 
 function carregarFooter() {
+  //
   const footerHTML = `
     <footer class="bg-brio-green text-white text-center py-4 mt-auto">
       <div class="container">
@@ -83,6 +85,5 @@ function carregarFooter() {
     </footer>
     `;
 
-  document.body.insertAdjacentHTML("beforeend", footerHTML);
+  document.body.insertAdjacentHTML("beforeend", footerHTML); //
 }
-j;

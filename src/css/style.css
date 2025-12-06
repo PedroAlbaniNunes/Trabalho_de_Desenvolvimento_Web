@@ -1,18 +1,27 @@
 /* --- estilos globais do site --- */
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   background-color: #e6f6ec;
   color: #333;
 }
 
 /* --- cores personalizadas (peguei do figma) --- */
-.bg-brio-green { background-color: #7f8f5a; }
-.text-brio-green { color: #4a572c; }
-.text-brio-light { color: #7f8f5a; }
+.bg-brio-green {
+  background-color: #7f8f5a;
+}
+.text-brio-green {
+  color: #4a572c;
+}
+.text-brio-light {
+  color: #7f8f5a;
+}
 
 /* --- textos --- */
-h1, h2, h3, .font-serif {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: "Playfair Display", serif;
   font-weight: 700;
 }
 
@@ -33,7 +42,7 @@ h1, h2, h3, .font-serif {
   background-position: center;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   text-decoration: none;
@@ -41,7 +50,10 @@ h1, h2, h3, .font-serif {
 
 .category-overlay {
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background: rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
@@ -51,7 +63,7 @@ h1, h2, h3, .font-serif {
 
 .category-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
 .category-card:hover .category-overlay {
@@ -60,12 +72,12 @@ h1, h2, h3, .font-serif {
 
 .category-text {
   color: white;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
   z-index: 2;
-  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 /* layout da imagem na página de receitas (acho que vindo do back vai funcionar) */
@@ -78,6 +90,5 @@ h1, h2, h3, .font-serif {
 
 .texto_botao {
   background-color: #4a572c;
-    color: #ffffff !important;
+  color: #ffffff !important;
 }
-
