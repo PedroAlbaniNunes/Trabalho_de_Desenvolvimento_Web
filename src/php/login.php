@@ -27,21 +27,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_nome'] = $user['nome'];
             $_SESSION['user_email'] = $user['email'];
 
-            header("Location: ../../src2/frontend/index.html");
+            header("Location: ../pages/tela_inicial.html");
             exit;
 
         } else {
-            header("Location: ../frontend/login.html?login_erro=true");
+            header("Location: ../pages/crud_usuario/login.html?login_erro=true");
         }
 
     } catch (PDOException $e) {
         // Log error securely
         error_log('Login error: ' . $e->getMessage());
-        header("Location: ../frontend/login.html?login_erro=true");
+        header("Location: ../pages/crud_usuario/login.html?login_erro=true");
         exit;
     }
 } else {
-    header("Location: ../frontend/login.html");
+    header("Location: ../pages/crud_usuario/login.html");
     exit;
 }
 

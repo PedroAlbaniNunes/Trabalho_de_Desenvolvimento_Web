@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // 1. Validação simples
     if (empty($token) || empty($nova_senha) || $nova_senha !== $confirma_senha) {
-        header("Location: ../frontend/redefinir_senha.html?erro=dados_invalidos");
+        header("Location: ../pages/crud_usuario/redefinir_senha.html?erro=dados_invalidos");
         exit;
     }
 
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $reset_data = $stmt_check->fetch(PDO::FETCH_ASSOC);
 
         if (!$reset_data) {
-            header("Location: ../frontend/redefinir_senha.html?erro=token_invalido");
+            header("Location: ../pages/crud_usuario/redefinir_senha.html?erro=token_invalido");
             exit;
         }
 
@@ -41,15 +41,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $pdo->prepare($sql_delete)->execute([':token' => $token]);
 
         // Sucesso
-        header("Location: ../frontend/login.html?reset_sucesso=true");
+        header("Location: ../pages/crud_usuario/login.html?reset_sucesso=true");
         exit;
 
     } catch (PDOException $e) {
-        header("Location: ../frontend/redefinir_senha.html?erro=sistema");
+        header("Location: ../pages/crud_usuario/redefinir_senha.html?erro=sistema");
         exit;
     }
 } else {
-    header("Location: ../frontend/login.html");
+    header("Location: ../pages/crud_usuario/login.html");
     exit;
 }
 ?>

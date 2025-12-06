@@ -3,7 +3,7 @@ session_start();
 require 'conexao.php';
 
 if (!isset($_GET['id']) || !is_numeric($_GET['id'])) {
-    header("Location: ../../src2/frontend/index.html");
+    header("Location: ../pages/tela_inicial.html");
     exit;
 }
 
@@ -21,7 +21,7 @@ try {
     $receita = $stmt->fetch(PDO::FETCH_ASSOC);
     
     if (!$receita) {
-        header("Location: ../../src2/frontend/index.html?erro=receita_nao_encontrada");
+        header("Location: ../pages/tela_inicial.html?erro=receita_nao_encontrada");
         exit;
     }
     
@@ -70,7 +70,7 @@ try {
         echo json_encode(['error' => 'Erro ao carregar receita']);
         exit;
     }
-    header("Location: ../../src2/frontend/index.html?erro=sistema");
+    header("Location: ../pages/tela_inicial.html?erro=sistema");
     exit;
 }
 ?>

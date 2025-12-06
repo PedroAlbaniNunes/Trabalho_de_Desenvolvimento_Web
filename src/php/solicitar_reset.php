@@ -5,7 +5,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'] ?? '';
 
     if (empty($email)) {
-        header("Location: ../frontend/recuperar_senha.html?erro=vazio");
+        header("Location: ..pages/crud_usuario/recuperar_senha.html?erro=vazio");
         exit;
     }
 
@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt_check->execute([':email' => $email]);
         
         if ($stmt_check->rowCount() === 0) {
-            header("Location: ../frontend/recuperar_senha.html?erro=email_nao_encontrado");
+            header("Location: ../pages/crud_usuario/recuperar_senha.html?erro=email_nao_encontrado");
             exit;
         }
 
@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':expira_em' => $expira_em
         ]);
 
-        $reset_link = "http://localhost/web/src/frontend/redefinir_senha.html?token=" . $token;        
+        $reset_link = "http://localhost/web/src/pages/crud_usuario/redefinir_senha.html?token=" . $token;        
         // =================================================================
         // MODO SIMULAÇÃO (EXIBE O TOKEN NA TELA)
         // O código de envio de email foi removido para fins de teste local.
@@ -48,10 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
     } catch (PDOException $e) {
         // Se houver um erro no banco de dados, você será redirecionado aqui.
-        header("Location: ../frontend/recuperar_senha.html?erro=sistema");
+        header("Location: ../pages/crud_usuario/recuperar_senha.html?erro=sistema");
         exit;
     }
 } else {
-    header("Location: ../frontend/recuperar_senha.html");
+    header("Location: ../pages/crud_usuario/recuperar_senha.html");
     exit;
 }

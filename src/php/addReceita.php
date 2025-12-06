@@ -3,7 +3,7 @@ session_start();
 require "conexao.php";
 
 if (!isset($_SESSION['user_id'])) {
-    header("Location: ../..src2/frontend/adicionar_receita.html?erro=nao_logado");
+    header("Location: ../pages/adicionar_receita.html?erro=nao_logado");
     exit;
 }
 
@@ -38,12 +38,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     // Validação básica
     if (empty($titulo) || empty($descricao) || empty($categoria) || empty($dificuldade) || empty($ingredientes) || empty($preparo)) {
-        header("Location: ../../src2/frontend/adicionar_receita.html?erro=campos_obrigatorios");
+        header("Location: ../pages/adicionar_receita.html?erro=campos_obrigatorios");
         exit;
     }
     
     if ($tempo_preparo <= 0) {
-        header("Location: ../../src2/frontend/adicionar_receita.html?erro=tempo_invalido");
+        header("Location: ../pages/adicionar_receita.html?erro=tempo_invalido");
         exit;
     } 
 
@@ -69,17 +69,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             ':preparo'      => $preparo
         ]);
 
-        header("Location: ../../src2/frontend/adicionar_receita.html?sucesso=true");
+        header("Location: ../pages/adicionar_receita.html?sucesso=true");
         exit;
 
     } catch (PDOException $e) {
         // Log error for debugging
         error_log('Recipe creation error: ' . $e->getMessage());
-        header("Location: ../../src2/frontend/adicionar_receita.html?erro=sistema");
+        header("Location: ../pages/adicionar_receita.html?erro=sistema");
         exit;
     }
 } else {
-    header("Location: ../../src2/frontend/adicionar_receita.html");
+    header("Location: ../pages/adicionar_receita.html");
     exit;
 }
 ?>
