@@ -10,7 +10,7 @@
 4.  Na barra lateral esquerda, clique em **Novo** (New).
 5.  Crie um banco de dados com o nome: `crud`
 6.  Clique na aba **Importar** (no menu superior).
-7.  Selecione o arquivo `crud.sql` que está na pasta arquivos, e clique em **Importar**.
+7.  Selecione o arquivo [`crud.sql`](../crud_sql/crud.sql), e clique em **Importar**.
     - _Isso vai criar a tabela `usuarios` com as colunas necessárias para a recuperação de senha._
 
 ---
