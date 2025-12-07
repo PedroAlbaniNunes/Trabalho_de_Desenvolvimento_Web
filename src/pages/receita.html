@@ -36,7 +36,7 @@
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
               <li class="breadcrumb-item">
-                <a href="..\index.html">Início</a>
+                <a href="..\..\index.html">Início</a>
               </li>
               <li class="breadcrumb-item">
                 <a href="receitas.html">Receitas</a>
@@ -219,7 +219,7 @@
       });
 
       function carregarReceita(id) {
-        fetch(`../../src/backend/verReceita.php?id=${id}&ajax=1`)
+        fetch(`../php/verReceita.php?id=${id}&ajax=1`)
           .then((response) => response.json())
           .then((data) => {
             if (data.error) {
