@@ -137,7 +137,7 @@
         if (busca) params.append("busca", busca);
         if (categoria) params.append("categoria", categoria);
 
-        fetch(`../../src/backend/listarReceitas.php?${params}`)
+        fetch(`../php/listarReceitas.php?${params}`)
           .then((response) => response.json())
           .then((data) => {
             if (data.error) {
@@ -266,7 +266,7 @@
       }
 
       function toggleFavorito(receitaId, button) {
-        fetch("../../src/backend/favoritos.php", {
+        fetch("../php/favoritos.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
