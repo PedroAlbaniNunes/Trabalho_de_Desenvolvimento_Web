@@ -3,20 +3,37 @@
 <head>
     <title>Esqueci a Senha</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/crud_usuario_css/crud_usuario_style.css">
 </head>
 <body>
 
-    <h1>Esqueci a Senha</h1>
+    <!-- <header class="cabecalho-navegacao">
+        <nav>
+            <a href="../../index.html">Início</a>
+        </nav>
+    </header> -->
 
-    <form method="post" action="send-password-reset.php">
+    <div class="login-container">
+        
+        <h1>Esqueci a Senha</h1>
 
-        <label for="email">Digite seu e-mail cadastrado:</label>
-        <input type="email" name="email" id="email" required>
+        <form method="post" action="send-password-reset.php">
 
-        <button>Enviar Link de Recuperação</button>
+            <div class="input-group">
+                <label for="email">Digite seu e-mail cadastrado</label>
+                <input type="email" name="email" id="email" placeholder="exemplo@email.com" required>
+            </div>
 
-    </form>
+            <button type="submit">Enviar Link</button>
+
+        </form>
+
+        <div class="login-options">
+            <a href="login.php">Voltar para o Login</a>
+        </div>
+
+    </div>
 
 </body>
 </html>
