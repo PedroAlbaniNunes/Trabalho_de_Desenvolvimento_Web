@@ -2,7 +2,7 @@
 
 
 session_start();
-require 'conexao.php'; 
+require '../conexao.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
@@ -27,28 +27,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['user_nome'] = $user['nome'];
             $_SESSION['user_email'] = $user['email'];
 
-            header("Location: ../pages/tela_inicial.html");
+            header("Location: ../../pages/tela_inicial.html");
             exit;
 
         } else {
-            header("Location: ../pages/crud_usuario/login.html?login_erro=true");
+            header("Location: ../../pages/crud_usuario/login.html?login_erro=true");
         }
 
     } catch (PDOException $e) {
         // Log error securely
         error_log('Login error: ' . $e->getMessage());
-        header("Location: ../pages/crud_usuario/login.html?login_erro=true");
+        header("Location: ../../pages/crud_usuario/login.html?login_erro=true");
         exit;
     }
 } else {
-    header("Location: ../pages/crud_usuario/login.html");
+    header("Location: ../../pages/crud_usuario/login.html");
     exit;
 }
 
 function logout() {
     session_unset();
     session_destroy();
-    header("Location: ../frontend/login.html");
+    header("Location: ../../../index.html");
     exit;
 }
 ?>

@@ -4,7 +4,7 @@ $token = $_POST["token"];
 
 $token_hash = hash("sha256", $token);
 
-require __DIR__ . "/conexao.php";
+require __DIR__ . "/../conexao.php";
 
 $sql = "SELECT * FROM usuarios
         WHERE reset_token_hash = ?";

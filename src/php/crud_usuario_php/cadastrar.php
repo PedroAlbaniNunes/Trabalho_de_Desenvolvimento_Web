@@ -1,5 +1,5 @@
 <?php
-require 'conexao.php';
+require '../conexao.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nome = $_POST['username'];
@@ -19,20 +19,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             ':senha' => $password_criptografada
         ]);
 
-        header("Location: ../pages/crud_usuario/register.html?sucesso=true");        
+        header("Location: ../../pages/crud_usuario/register.html?sucesso=true");        
         exit;
 
     } catch (PDOException $e) {
         if ($e->getCode() == 23000) {
-            header("Location: ../pages/crud_usuario/register.html?erro=email_existe");
+            header("Location: ../../pages/crud_usuario/register.html?erro=email_existe");
             exit;
         } else {
-            header("Location: ../pages/crud_usuario/register.html?erro=sistema");
+            header("Location: ../../pages/crud_usuario/register.html?erro=sistema");
             exit;
         }
     }
 } else {
-    header("Location: ../pages/crud_usuario/register.html");
+    header("Location: ../../pages/crud_usuario/register.html");
     exit;
 }
 ?>

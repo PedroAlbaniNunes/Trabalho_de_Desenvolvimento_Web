@@ -8,7 +8,7 @@ $token_hash = hash("sha256", $token);
 
 $expiry = date("Y-m-d H:i:s", time() + 60 * 30);
 
-require __DIR__ . "/conexao.php";
+require __DIR__ . "/../conexao.php";
 
 $sql = "UPDATE usuarios
         SET reset_token_hash = ?,
@@ -28,7 +28,7 @@ if ($stmt->rowCount()) {
     $mail->Subject = "Password Reset";
     $mail->Body = <<<END
 
-        Click <a href="http://localhost/Trabalho_de_Desenvolvimento_Web/src/php/reset-password.php?token=$token">here</a> 
+        Click <a href="http://localhost/Trabalho_de_Desenvolvimento_Web/src/php/crud_usuario_php/reset-password.php?token=$token">here</a> 
         to reset your password.
 
         END;

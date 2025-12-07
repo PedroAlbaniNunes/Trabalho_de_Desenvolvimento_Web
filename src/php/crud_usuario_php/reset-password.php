@@ -4,7 +4,7 @@ $token = $_GET["token"];
 
 $token_hash = hash("sha256", $token);
 
-require __DIR__ . "/conexao.php";
+require __DIR__ . "/../conexao.php";
 
 $sql = "SELECT * FROM usuarios
         WHERE reset_token_hash = ?";
@@ -30,7 +30,7 @@ if (strtotime($user["reset_token_expires_at"]) <= time()) {
     <title>Redefinir Senha</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/crud_usuario_css/crud_usuario_style.css">
+    <link rel="stylesheet" href="../../css/crud_usuario_css/crud_usuario_style.css">
 </head>
 <body>
 
