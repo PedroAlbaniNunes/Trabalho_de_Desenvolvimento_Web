@@ -30,7 +30,7 @@
         </form>
 
         <div class="login-options">
-            <a href="login.php">Voltar para o Login</a>
+            <a href="../pages/crud_usuario/login.html">Voltar para o Login</a>
         </div>
 
     </div>
