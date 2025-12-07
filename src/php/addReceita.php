@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     
     $usuario_id = $_SESSION['user_id'];
     
-    // Dados do formulário com validação básica
+    // Dados do formulário
     $titulo = trim($_POST['nome'] ?? '');
     $descricao = trim($_POST['descricao'] ?? '');
     $tempo_preparo = intval($_POST['tempo'] ?? 0);
@@ -19,41 +19,56 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
     $dificuldade_raw = trim($_POST['dificuldade'] ?? '');
     $ingredientes = trim($_POST['ingredientes'] ?? '');
     $preparo = trim($_POST['preparo'] ?? '');
-    
-    // Fix difficulty mapping from numeric to text
+
+    // Mapeamento de dificuldade
     $difficulty_map = [
-        '1' => 'Fácil',
-        '2' => 'Médio', 
-        '3' => 'Difícil',
-        '4' => 'Chef',
-        '5' => 'Chef'
+        '1' => 'Fácil', '2' => 'Médio', '3' => 'Difícil', '4' => 'Chef', '5' => 'Chef'
     ];
+    $dificuldade = $difficulty_map[$dificuldade_raw] ?? $dificuldade_raw;
     
-    // Convert numeric difficulty to text if needed
-    if (isset($difficulty_map[$dificuldade_raw])) {
-        $dificuldade = $difficulty_map[$dificuldade_raw];
-    } else {
-        $dificuldade = $dificuldade_raw; // Already text format
-    }
-    
-    // Validação básica
+    // Validação básica dos textos
     if (empty($titulo) || empty($descricao) || empty($categoria) || empty($dificuldade) || empty($ingredientes) || empty($preparo)) {
         header("Location: ../pages/adicionar_receita.html?erro=campos_obrigatorios");
         exit;
     }
     
-    if ($tempo_preparo <= 0) {
-        header("Location: ../pages/adicionar_receita.html?erro=tempo_invalido");
-        exit;
-    } 
+    $path_imagem = null; 
+
+    if (isset($_FILES['foto']) && $_FILES['foto']['error'] === 0) {
+        $arquivo = $_FILES['foto'];
+        
+        // 1. Validar extensão
+        $extensao = strtolower(pathinfo($arquivo['name'], PATHINFO_EXTENSION));
+        $permitidos = ['jpg', 'jpeg', 'png', 'webp'];
+        
+        if (!in_array($extensao, $permitidos)) {
+            header("Location: ../pages/adicionar_receita.html?erro=formato_invalido");
+            exit;
+        }
+
+        $novo_nome = uniqid() . "." . $extensao;
+        
+        $diretorio = "../uploads/"; 
+        if (!is_dir($diretorio)) {
+            mkdir($diretorio, 0777, true);
+        }
+
+        if (move_uploaded_file($arquivo['tmp_name'], $diretorio . $novo_nome)) {
+            $path_imagem = "uploads/" . $novo_nome; 
+        } else {
+            header("Location: ../pages/adicionar_receita.html?erro=falha_upload");
+            exit;
+        }
+    }
+    // ----------------------------------
 
     try {
         $sql = "INSERT INTO receitas (
                     usuario_id, nome, descricao, tempo_preparo_minutos, 
-                    categoria, dificuldade, ingredientes, modo_preparo
+                    categoria, dificuldade, ingredientes, modo_preparo, imagem
                 ) VALUES (
                     :usuario_id, :nome, :descricao, :tempo_preparo, 
-                    :categoria, :dificuldade, :ingredientes, :preparo
+                    :categoria, :dificuldade, :ingredientes, :preparo, :imagem
                 )";
         
         $stmt = $pdo->prepare($sql);
@@ -66,14 +81,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST'){
             ':categoria'    => $categoria,
             ':dificuldade'  => $dificuldade,
             ':ingredientes' => $ingredientes,
-            ':preparo'      => $preparo
+            ':preparo'      => $preparo,
+            ':imagem'       => $path_imagem 
         ]);
 
         header("Location: ../pages/adicionar_receita.html?sucesso=true");
         exit;
 
     } catch (PDOException $e) {
-        // Log error for debugging
         error_log('Recipe creation error: ' . $e->getMessage());
         header("Location: ../pages/adicionar_receita.html?erro=sistema");
         exit;

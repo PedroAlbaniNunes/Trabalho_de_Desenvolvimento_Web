@@ -23,7 +23,12 @@
     <div class="container my-5 bg-white rounded-4 p-4" style="max-width: 700px">
       <h2 class="mb-5" style="color: #4a572c">Adicionar Nova Receita</h2>
 
-      <form id="formReceita" action="../php/addReceita.php" method="post">
+      <form
+        id="formReceita"
+        action="../php/addReceita.php"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <div class="mb-3">
           <label class="form-label">Nome da Receita</label>
           <input
@@ -111,6 +116,19 @@
           ></textarea>
         </div>
 
+        <div class="mb-3">
+          <label class="form-label">Foto da Receita</label>
+          <input
+            type="file"
+            class="form-control"
+            id="foto"
+            name="foto"
+            accept="image/*"
+            required
+          />
+          <div class="form-text">Formatos aceitos: JPG, PNG ou JPEG.</div>
+        </div>
+
         <button type="submit" class="btn btn-success w-100 texto_botao">
           Salvar Receita
         </button>
@@ -196,6 +214,11 @@
           } else if (tipoErro === "sistema") {
             elementoMsg.innerText =
               "Erro no banco de dados. Verifique se todos os campos estão corretos.";
+          } else if (tipoErro === "formato_invalido") {
+            elementoMsg.innerText =
+              "Formato de imagem inválido. Use JPG, PNG ou WEBP.";
+          } else if (tipoErro === "falha_upload") {
+            elementoMsg.innerText = "Falha ao fazer upload da imagem.";
           } else {
             elementoMsg.innerText = "Ocorreu um erro desconhecido.";
           }
