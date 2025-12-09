@@ -36,18 +36,28 @@ function carregarHeaderLogado(titulo) {
           <a href="${getLink(
             "src/pages/receitas.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class="fas fa-utensils"></i> <span>Todas</span>
+             <i class="fas fa-utensils"></i> <span>Todas as Receitas</span>
           </a>
           <a href="${getLink(
             "src/pages/airfryer.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-wind"></i> <span>Air Fryer</span>
-          </a>          
+          </a>       
+          <a href="${getLink(
+            "src/pages/pasta.html"
+          )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-pizza-slice"></i> <span>Pasta</span>
+          </a>
+          <a href="${getLink(
+            "src/pages/snacks.html"
+          )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
+          </a>   
           <a href="${getLink(
             "src/pages/adicionar_receita.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
             <i class="fas fa-plus-circle"></i> <span>Adicionar</span>
-          </a>
+          </a>   
           <a href="${getLink(
             "src/pages/favoritas.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
