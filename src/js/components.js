@@ -30,7 +30,7 @@ function carregarHeaderLogado(titulo) {
           <a href="${getLink(
             "index.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class="fas fa-utensils"></i> <span>Home</span>
+             <i class=""></i> <span>Home</span>
           </a>
 
           <a href="${getLink(
@@ -76,7 +76,7 @@ function carregarHeaderVisitante(titulo) {
           <a href="${getLink(
             "index.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class="fas fa-utensils"></i> <span>Home</span>
+             <i class=""></i> <span>Home</span>
           </a>
 
           <a href="${getLink(
