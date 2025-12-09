@@ -1,14 +1,7 @@
-/**
- * ARQUIVO: src/js/components.js
- */
-
-// 1. CONFIGURAÇÃO DA RAIZ DO PROJETO
 const PROJECT_ROOT = "/Trabalho_de_Desenvolvimento_Web";
 
-// 2. CAMINHO DO PHP (Corrigido conforme seu print: está solto em src/php/)
 const pathPHP = `${PROJECT_ROOT}/src/php/verificar_sessao.php`;
 
-// 3. FUNÇÃO AUXILIAR DE LINK
 function getLink(caminhoRelativo) {
   const caminhoLimpo = caminhoRelativo.startsWith("/")
     ? caminhoRelativo.slice(1)
@@ -16,7 +9,6 @@ function getLink(caminhoRelativo) {
   return `${PROJECT_ROOT}/${caminhoLimpo}`;
 }
 
-// --- FOOTER ---
 function carregarFooter() {
   const footerHTML = `
       <footer class="bg-dark text-white py-4 mt-5">
@@ -29,13 +21,18 @@ function carregarFooter() {
   document.body.insertAdjacentHTML("beforeend", footerHTML);
 }
 
-// --- HEADER LOGADO ---
 function carregarHeaderLogado(titulo) {
   const headerHTML = `
     <header class="navbar navbar-expand bg-brio-green text-white py-3 shadow-sm">
       <div class="container">
         <div class="navbar-brand text-white font-serif fs-3 me-auto">${titulo}</div>
         <div class="d-flex align-items-center gap-1">
+          <a href="${getLink(
+            "index.html"
+          )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-utensils"></i> <span>Home</span>
+          </a>
+
           <a href="${getLink(
             "src/pages/receitas.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
@@ -69,9 +66,6 @@ function carregarHeaderLogado(titulo) {
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 }
 
-// --- HEADER VISITANTE ---
-// --- HEADER PARA VISITANTE (NÃO LOGADO) ---
-// Com todas as opções de navegação restauradas
 function carregarHeaderVisitante(titulo) {
   const headerHTML = `
     <header class="navbar navbar-expand bg-brio-green text-white py-3 shadow-sm">
@@ -79,6 +73,12 @@ function carregarHeaderVisitante(titulo) {
         <div class="navbar-brand text-white font-serif fs-3 me-auto">${titulo}</div>
         
         <div class="d-flex align-items-center gap-1">
+          <a href="${getLink(
+            "index.html"
+          )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-utensils"></i> <span>Home</span>
+          </a>
+
           <a href="${getLink(
             "src/pages/receitas.html"
           )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
@@ -115,7 +115,6 @@ function carregarHeaderVisitante(titulo) {
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 }
 
-// --- LÓGICA PRINCIPAL ---
 async function carregarComponentes(titulo = "Brio") {
   try {
     // TRUQUE DO TIMESTAMP: ?t=12345
