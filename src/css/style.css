@@ -39,10 +39,8 @@ h3,
   width: 280px;
   height: 280px;
 
-  /* 2. Mude o raio da borda para 50% */
   border-radius: 50%;
 
-  /* O restante permanece igual */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -52,8 +50,7 @@ h3,
   cursor: pointer;
   text-decoration: none;
 
-  /* Opcional: Para garantir que o card se comporte como bloco e aceite as medidas */
-  display: block; /* ou inline-block */
+  display: block;
 }
 
 .category-overlay {
@@ -67,9 +64,6 @@ h3,
   align-items: center;
   justify-content: center;
   transition: background 0.3s;
-
-  /* Importante: como o pai agora é um círculo (border-radius: 50% e overflow: hidden),
-     o overlay já respeitará o formato circular automaticamente */
 }
 
 .category-card:hover {
@@ -90,8 +84,6 @@ h3,
   z-index: 2;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 
-  /* Dica extra: Adicione padding para impedir que textos longos
-     encostem nas bordas curvas do círculo */
   padding: 0 20px;
 }
 
