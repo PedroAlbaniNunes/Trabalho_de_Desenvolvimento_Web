@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 07/12/2025 às 18:06
+-- Tempo de geração: 09/12/2025 às 23:32
 -- Versão do servidor: 10.4.32-MariaDB
 -- Versão do PHP: 8.2.12
 
@@ -33,6 +33,18 @@ CREATE TABLE `favoritos` (
   `receita_id` int(11) NOT NULL,
   `data_favorito` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `favoritos`
+--
+
+INSERT INTO `favoritos` (`id`, `usuario_id`, `receita_id`, `data_favorito`) VALUES
+(7, 12, 1, '2025-12-08 19:22:28'),
+(8, 12, 2, '2025-12-08 19:22:29'),
+(11, 12, 5, '2025-12-08 19:22:44'),
+(13, 12, 3, '2025-12-08 19:29:27'),
+(14, 12, 8, '2025-12-08 19:29:35'),
+(15, 13, 8, '2025-12-08 21:21:19');
 
 -- --------------------------------------------------------
 
@@ -113,7 +125,8 @@ CREATE TABLE `usuarios` (
 INSERT INTO `usuarios` (`id`, `nome`, `email`, `senha`, `token_reset`, `tipo_usuario`, `data_cadastro`, `reset_token_hash`, `reset_token_expires_at`) VALUES
 (10, 'allicia30300@gmail.com', 'allicia30300@gmail.com', '$2y$10$JwpQn5r3txB1NktGg7tVGeZqoR5jQt/2jOkxajCHnrX3VIqGlohmi', NULL, 'comum', '2025-12-05 14:44:21', NULL, NULL),
 (11, 'allicia5@gmail.com', 'allicia5@gmail.com', '$2y$10$KHDh79q8fvY2AbWYFR.pz.ZIbvX9Me/zoxU/T6E9gYY2Xjxvb7nuK', NULL, 'comum', '2025-12-06 19:40:53', '058c551108b96b124e05b8f8c4fe96def3f1ae275fa5784e4091b91e8a45bc5d', '2025-12-07 10:56:26'),
-(12, 'teste', 'testando@gmail.com', '$2y$10$SC/5sdNGpAkXETCtofsy3uzMK2Vj5meAluz/V3ehD4s2GShWZYmLe', NULL, 'comum', '2025-12-07 07:33:33', NULL, NULL);
+(12, 'teste', 'testando@gmail.com', '$2y$10$SC/5sdNGpAkXETCtofsy3uzMK2Vj5meAluz/V3ehD4s2GShWZYmLe', NULL, 'comum', '2025-12-07 07:33:33', NULL, NULL),
+(13, 'teste', 'testandoA@gmail.com', '$2y$10$yU2qFMWSiFCSng2ZaMdmJeYw4VUZC3X8Kgv/QYePHfXW6T9q50tkO', NULL, 'comum', '2025-12-08 21:20:59', NULL, NULL);
 
 --
 -- Índices para tabelas despejadas
@@ -157,7 +170,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de tabela `favoritos`
 --
 ALTER TABLE `favoritos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de tabela `password_resets`
@@ -175,7 +188,7 @@ ALTER TABLE `receitas`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- Restrições para tabelas despejadas
