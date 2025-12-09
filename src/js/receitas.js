@@ -130,7 +130,7 @@ function renderReceitas(receitas) {
                   }, this)">
                     <i class="fas fa-heart"></i>
                   </button>
-                  <a href="verReceita.php?id=${
+                  <a href="../php/verReceita.php?id=${
                     receita.id
                   }" class="btn btn-sm btn-success">Ver Receita</a>
                 </div>
