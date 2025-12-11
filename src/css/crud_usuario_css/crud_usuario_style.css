@@ -2,10 +2,10 @@
   /* Cores de Fundo e Texto */
   --cor-fundo-pagina: #f4f4f9;
   --cor-fundo-container: #fff;
-  --cor-texto-principal: #333;
-  --cor-texto-secundario: #555;
+  --cor-texto-principal: #5cb85c;
+  --cor-texto-secundario: #779e7f;
   --cor-borda-input: #ccc;
-  --cor-link: #007bff;
+  --cor-link: #5cb85c;
   --cor-texto-cabecalho: white;
 
   /* Cores de Sucesso/Primário */
