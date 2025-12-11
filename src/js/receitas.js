@@ -94,17 +94,30 @@ function renderReceitas(receitas) {
 
       return `
         <div class="col-md-6 col-lg-4">
-          <div class="card h-100 shadow-sm overflow-hidden">
+          <div class="card h-100 shadow-sm overflow-hidden rounded-4" >
             
-            <div style="height: 200px; overflow: hidden; background-color: #f8f9fa;">
+            <div style="position: relative; height: 300px; overflow: hidden; background-color: #f8f9fa; border-bottom: 1px solid #949191ff;">
+                 <small class="text-dark shadow-sm" style="background-color: rgba(255, 255, 255, 0.9); border-radius: 15px; padding: 5px 10px; position: absolute; top: 10px; left: 10px; z-index: 10; font-weight: 500;">
+                    <i class="fas fa-clock me-1"></i> ${receita.tempo_preparo_minutos} min
+                 </small>
                 <img 
                     src="${imagemUrl}" 
-                    class="card-img-top w-100 h-100" 
+                    class="card-img-top w-100 h-100 " 
                     alt="${receita.nome}" 
                     style="object-fit: cover;"
                     onerror="this.src='https://placehold.co/600x400?text=Erro+Imagem';"
                 >
             </div>
+            
+            
+            <div class="card-body d-flex flex-column">
+
+              <div class="d-flex align-items-center mb-2">
+                  <span class="badge texto_botao rounded-pill me-2 p-2">${receita.categoria}</span>
+                  <span class="badge texto_botao rounded-pill p-2">Nível ${receita.dificuldade}</span>
+              </div>
+
+          </div>
 
             <div class="card-body">
               <h5 class="card-title text-brio-green">${receita.nome}</h5>
@@ -114,25 +127,16 @@ function renderReceitas(receitas) {
               <p class="card-text">${receita.descricao.substring(0, 100)}${
         receita.descricao.length > 100 ? "..." : ""
       }</p>
-              
-              <div class="d-flex justify-content-between align-items-center mb-2">
-                <span class="badge bg-secondary">${receita.categoria}</span>
-                <small class="text-muted"><i class="fas fa-clock"></i> ${
-                  receita.tempo_preparo_minutos
-                } min</small>
-              </div>
-              
-              <div class="d-flex justify-content-between align-items-center mt-3">
-                <span class="badge bg-info">Nível ${receita.dificuldade}</span>
-                <div>
-                  <button class="btn btn-sm btn-outline-danger me-2" onclick="toggleFavorito(${
+      <hr>
+      <div class="mt-auto d-flex justify-content-between align-items-center">
+                  <button class="btn btn-sm btn-outline-danger me-1 rounded-pill " onclick="toggleFavorito(${
                     receita.id
                   }, this)">
                     <i class="fas fa-heart"></i>
                   </button>
                   <a href="../php/verReceita.php?id=${
                     receita.id
-                  }" class="btn btn-sm btn-success">Ver Receita</a>
+                  }" class="btn btn-success rounded-pill fw-bold shadow-sm texto_botao">Ver Receita</a>
                 </div>
               </div>
             </div>
