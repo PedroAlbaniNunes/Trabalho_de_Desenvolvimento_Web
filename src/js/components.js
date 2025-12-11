@@ -1,13 +1,20 @@
-const PROJECT_ROOT = "/Trabalho_de_Desenvolvimento_Web";
+const PROJECT_ROOT = "";
 
 const pathPHP = `${PROJECT_ROOT}/src/php/verificar_sessao.php`;
 
+
 function getLink(caminhoRelativo) {
-  const caminhoLimpo = caminhoRelativo.startsWith("/")
-    ? caminhoRelativo.slice(1)
-    : caminhoRelativo;
-  return `${PROJECT_ROOT}/${caminhoLimpo}`;
+  return caminhoRelativo;
 }
+
+
+
+// function getLink(caminhoRelativo) {
+//   const caminhoLimpo = caminhoRelativo.startsWith("/")
+//     ? caminhoRelativo.slice(1)
+//     : caminhoRelativo;
+//   return `${PROJECT_ROOT}/${caminhoLimpo}`;
+// }
 
 function carregarFooter() {
   const footerHTML = `
@@ -27,40 +34,26 @@ function carregarHeaderLogado(titulo) {
       <div class="container">
         <div class="navbar-brand text-white font-serif fs-3 me-auto">${titulo}</div>
         <div class="d-flex align-items-center gap-1">
-          <a href="${getLink(
-    "pages/ultimas_receitas.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("pages/ultimas_receitas.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class=""></i> <span>Home</span>
           </a>
 
-          <a href="${getLink(
-    "pages/receitas.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("../pages/receitas.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-utensils"></i> <span>Todas as Receitas</span>
           </a>
-          <a href="${getLink(
-    "pages/airfryer.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("pages/airfryer.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-wind"></i> <span>Air Fryer</span>
           </a>       
-          <a href="${getLink(
-    "pages/pasta.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("pages/pasta.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-pizza-slice"></i> <span>Pasta</span>
           </a>
-          <a href="${getLink(
-    "pages/snacks.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("pages/snacks.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
           </a>   
-          <a href="${getLink(
-    "pages/adicionar_receita.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("pages/adicionar_receita.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
             <i class="fas fa-plus-circle"></i> <span>Adicionar</span>
           </a>   
-          <a href="${getLink(
-    "pages/favoritas.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("pages/favoritas.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-heart"></i> <span>Favoritas</span>
           </a>
           <a href="${getLink(
@@ -83,39 +76,27 @@ function carregarHeaderVisitante(titulo) {
         <div class="navbar-brand text-white font-serif fs-3 me-auto">${titulo}</div>
         
         <div class="d-flex align-items-center gap-1">
-          <a href="${getLink(
-    "pages/tela_inicial.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("../pages/tela_inicial.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class=""></i> <span>Home</span>
           </a>
 
-          <a href="${getLink(
-    "pages/snacks.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("../pages/receitas.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-utensils"></i> <span>Todas</span>
           </a>
 
-          <a href="${getLink(
-    "pages/airfryer.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("../pages/receitas.html?categoria=Air Fryer")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
              <i class="fas fa-wind"></i> <span>Air Fryer</span>
           </a>          
 
-          <a href="${getLink(
-    "pages/pasta.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class="fas fa-pizza-slice"></i> <span>Pasta</span>
+          <a href="${getLink("../pages/receitas.html?categoria=Massa")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-pizza-slice"></i> <span>Massas</span>
           </a>
 
-          <a href="${getLink(
-    "pages/snacks.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
-             <i class="fas fa-cookie-bite"></i> <span>Snacks</span>
+          <a href="${getLink("../pages/receitas.html?categoria=Lanche")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+             <i class="fas fa-cookie-bite"></i> <span>Lanches</span>
           </a>
 
-          <a href="${getLink(
-    "pages/crud_usuario/login.html"
-  )}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
+          <a href="${getLink("../pages/crud_usuario/login.html")}" class="d-none d-md-flex align-items-center gap-2 btn btn-link text-white text-decoration-none">
               <i class="fas fa-sign-in-alt"></i> <span>Entrar</span>
           </a>
         </div>
