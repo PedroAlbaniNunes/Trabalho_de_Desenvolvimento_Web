@@ -1,0 +1,56 @@
+@import url("crud_usuario_style.css");
+
+.main-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 10%;
+  flex-wrap: wrap;
+}
+
+/* Estilo para o Modal de Erro (diferente cor do modal de login) */
+.erro h2 {
+  color: var(--cor-alerta-erro-registro); /* #d9534f */
+  margin-top: 0;
+}
+.erro button {
+  background-color: var(--cor-alerta-erro-registro); /* #d9534f */
+  color: var(--cor-texto-cabecalho);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.erro button:hover {
+  background-color: var(--cor-alerta-registro-hover); /* #c9302c */
+}
+
+/* Estilo para Sucesso (Verde) */
+.sucesso h2 {
+  color: var(--cor-alerta-sucesso); /* #28a745 */
+  margin-top: 0;
+}
+.sucesso button {
+  background-color: var(--cor-alerta-sucesso); /* #28a745 */
+  color: var(--cor-texto-cabecalho);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.sucesso button:hover {
+  background-color: var(--cor-alerta-sucesso-hover); /* #218838 */
+}
+
+.message-box {
+  margin-top: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}

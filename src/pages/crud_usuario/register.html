@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="..\..\css\crud_usuario_css\crud_usuario_style.css">
+    <title>CRUD de Usuários - Registro e Lista</title>
+</head>
+<body>
+    <div class="main-content">
+        <div class="login-container">
+            <h1>Criar Conta</h1>
+            <form id="register-form" action="..\..\php\crud_usuario_php\cadastrar.php" method="post">
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="input-group">
+                    <label for="username">Nome de Usuário</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" minlength="6" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirm-password">Confirmar Senha</label>
+                    <input type="password" id="confirm-password" name="confirm-password" required>
+                </div>
+                <button type="submit" class="register-submit">Registrar</button>
+            </form>
+            
+            <div id="register-message" class="message-box"></div>
+
+            <p class="login-options">
+                <a href="login.html">Voltar para o Login</a>
+            </p>
+        </div>
+
+        <div id="modal-erro" class="modal-overlay">
+            <div class="modal-box erro">
+                <h2>Atenção!</h2>
+                <p id="mensagem-erro">Ocorreu um erro.</p>
+                <button onclick="fecharModal('modal-erro')">Tentar Novamente</button>
+            </div>
+        </div>
+
+        <div id="modal-sucesso" class="modal-overlay">
+            <div class="modal-box sucesso">
+                <h2>Sucesso!</h2>
+                <p>Seu cadastro foi realizado.</p>
+                <button onclick="irParaLogin()">Fazer Login</button>
+            </div>
+        </div>
+
+    <script src="..\..\js\crud_usuario_js\register.js"></script>
+</body>
+</html>
